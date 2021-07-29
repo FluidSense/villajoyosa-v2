@@ -1,0 +1,8 @@
+.amenity img {
+  margin-left: 10px;
+}
+
+.amenities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
