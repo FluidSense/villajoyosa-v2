@@ -26,7 +26,7 @@ const Amenity: FC<AmenityProps> = (props) => {
   const { amenity } = props;
   return (
     <article className={styles.amenity}>
-      <Image src={amenity.icon} alt={''} layout='fill' />
+      <Image src={amenity.icon || ''} alt={''} layout='fill' />
       <p>{amenity.text}</p>
     </article>
   );
