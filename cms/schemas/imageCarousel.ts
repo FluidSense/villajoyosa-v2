@@ -7,6 +7,12 @@ export default {
   type: 'document',
   fields: [
     {
+      title: "Navn",
+      name: "name",
+      description: "Navn vil vises om man holder musepekeren over bildet",
+      type: "string"
+    },
+    {
       title: 'Bilde',
       name: 'image',
       description: 'Bredt bilde til looping på forsiden',
