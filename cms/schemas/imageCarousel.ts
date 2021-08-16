@@ -1,6 +1,9 @@
+import { FaRegImages } from 'react-icons/fa';
+
 export default {
   title: 'Bildekarusell-bilder',
   name: 'imageCarousel',
+  icon: FaRegImages,
   type: 'document',
   fields: [
     {

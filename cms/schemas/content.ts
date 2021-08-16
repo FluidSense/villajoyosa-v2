@@ -1,6 +1,9 @@
+import { FaFileAlt } from "react-icons/fa";
+
 export default {
   title: 'Tekstinnhold',
   name: 'content',
+  icon: FaFileAlt,
   type: 'document',
   fields: [
     {

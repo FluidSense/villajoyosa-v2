@@ -1,8 +1,10 @@
 import preview from 'part:sanity-plugin-icon-picker/preview';
+import { FaClipboardList } from 'react-icons/fa';
 
 export default {
   title: 'Fasiliteter',
   name: 'amenity',
+  icon: FaClipboardList,
   type: 'document',
   fields: [
     {
