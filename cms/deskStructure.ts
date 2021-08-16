@@ -6,7 +6,7 @@ const singletonRestrictedPages = (listItem) =>
 
 export default () =>
   S.list()
-    .title('Content')
+    .title('Innhold')
     .items([
       S.listItem()
         .title('Sidetittel')
