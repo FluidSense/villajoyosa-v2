@@ -4,6 +4,16 @@ export type PageTitle = {
 };
 
 export type TextWithIcon = {
-  icon: string;
+  icon: Icon;
   text: string;
 };
+
+export type Icon = {
+  provider: string;
+  name: string;
+}
+
+export type Amenity = {
+  name: string;
+  display: TextWithIcon;
+}

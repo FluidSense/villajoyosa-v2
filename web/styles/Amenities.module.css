@@ -1,5 +1,12 @@
-.amenity img {
-  margin-left: 10px;
+.amenity > * {
+  display: inline;
+}
+
+.amenity > svg {
+  margin-right: 10px;
+  height: 100%;
+  width: auto;
+  vertical-align: middle;
 }
 
 .amenities {

@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { TextWithIcon } from '../types/pageTitle';
-import Image from 'next/image';
+import { Amenity } from '../types/pageTitle';
 import styles from '../styles/Amenities.module.css';
+import DynamicIcon from './DynamicIcon';
 
 type Props = {
-  amenities: TextWithIcon[];
+  amenities: Amenity[];
 };
 
 const Amenities: FC<Props> = (props) => {
@@ -12,22 +12,22 @@ const Amenities: FC<Props> = (props) => {
   return (
     <section className={styles.amenities}>
       {amenities.map((amenity) => (
-        <Amenity key={amenity.text} amenity={amenity} />
+        <AmenityDisplay amenity={amenity} key={amenity.name}/>
       ))}
     </section>
   );
 };
 
 type AmenityProps = {
-  amenity: TextWithIcon;
+  amenity: Amenity;
 };
 
-const Amenity: FC<AmenityProps> = (props) => {
-  const { amenity } = props;
+const AmenityDisplay: FC<AmenityProps> = (props) => {
+  const { amenity: { display: { text, icon } } } = props;
   return (
-    <article className={styles.amenity}>
-      <Image src={amenity.icon || ''} alt={''} layout='fill' />
-      <p>{amenity.text}</p>
+    <article className={styles.amenity} key={text}>
+      <DynamicIcon name={icon.name} provider={icon.provider} />
+      <p>{text}</p>
     </article>
   );
 };
