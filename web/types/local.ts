@@ -1,17 +1,15 @@
+import { SanityIcon } from "./sanityTypes";
+
 export type PageTitle = {
   title: string;
   subtitle: string;
 };
 
 export type TextWithIcon = {
-  icon: Icon;
+  icon: SanityIcon;
   text: string;
 };
 
-export type Icon = {
-  provider: string;
-  name: string;
-}
 
 export type Amenity = {
   name: string;
