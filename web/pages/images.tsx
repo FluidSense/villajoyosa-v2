@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Carousel } from "react-responsive-carousel";
 import client from "../sanityClient";
 import { SanityImage } from "../types/sanityTypes";
-import styles from "../styles/imageGallery.module.css";
+import styles from "../styles/ImageGallery.module.css";
 
 type Props = {
   images: SanityImage[];
