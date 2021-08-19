@@ -13,6 +13,7 @@ import textBlock from './objects/textBlock';
 import content from './content';
 import pageSelector from './objects/pageSelector';
 import imageCarousel from './imageCarousel';
+import imageGallery from './imageGallery';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -29,5 +30,6 @@ export default createSchema({
     pageSelector,
     content,
     imageCarousel,
+    imageGallery
   ]),
 });

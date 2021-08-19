@@ -8,7 +8,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
-    "build": "sanity build"
+    "build": "sanity build",
+    "sanity": "sanity"
   },
   "keywords": [
     "sanity"
@@ -28,7 +29,7 @@
     "sanity-plugin-icon-picker": "^2.0.1"
   },
   "devDependencies": {
-    "@sanity/cli": "^2.13.1",
+    "@sanity/cli": "^2.15.0",
     "prettier": "^2.3.2"
   }
 }
