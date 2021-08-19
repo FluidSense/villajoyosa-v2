@@ -1,4 +1,6 @@
-import { SanityIcon } from "./sanityTypes";
+import { SanityIcon, SanityText } from "./sanityTypes";
+
+type Pages = 'frontpage' | 'area' | 'rent' | 'transport';
 
 export type PageTitle = {
   title: string;
@@ -14,4 +16,10 @@ export type TextWithIcon = {
 export type Amenity = {
   name: string;
   display: TextWithIcon;
+}
+
+export type TextBlock = {
+  name: string;
+  displayPage: Pages;
+  text: SanityText;
 }
