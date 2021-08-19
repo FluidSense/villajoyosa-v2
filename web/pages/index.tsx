@@ -39,7 +39,7 @@ export async function getStaticProps(
   const pageTitleQuery = '*[_type == "pageTitle"][0]';
   const pageTitle = await client.fetch(pageTitleQuery);
 
-  const amenityQuery = '*[_type == "amenity"]{display}';
+  const amenityQuery = '*[_type == "amenity"]';
   const amenities = await client.fetch(amenityQuery);
 
   const textContentQuery =

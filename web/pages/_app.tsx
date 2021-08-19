@@ -23,6 +23,7 @@ function MyApp({ Component, pageProps, props }) {
           <h1>{title}</h1>
           <h2>{subtitle}</h2>
         </header>
+        <div id="carousel-holder" />
         <Navbar />
         <Component {...pageProps} />
       </main>

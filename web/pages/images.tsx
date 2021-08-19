@@ -14,7 +14,11 @@ const Images: FC<Props> = (props) => {
   return (
     <Carousel className={styles.gallery}>
       {images.map((image) => (
-        <img src={image.imageUrl} alt={image.name} />
+        <img
+          key={image._id || image.name}
+          src={image.imageUrl}
+          alt={image.name}
+        />
       ))}
     </Carousel>
   );

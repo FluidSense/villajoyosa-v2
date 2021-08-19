@@ -1,3 +1,4 @@
+import { SanityDocument } from "@sanity/client";
 import { SanityIcon, SanityText } from "./sanityTypes";
 
 type Pages = 'frontpage' | 'area' | 'rent' | 'transport';
@@ -13,7 +14,7 @@ export type TextWithIcon = {
 };
 
 
-export type Amenity = {
+export type Amenity = SanityDocument & {
   name: string;
   display: TextWithIcon;
 }
