@@ -24,3 +24,11 @@
   margin: 0 20% auto 27%;
   padding: 1%;
 }
+
+.section > div > h3 {
+  margin-top: 70px;
+}
+
+.section > div:first-of-type > h3 {
+  margin-top: 30px;
+}

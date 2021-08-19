@@ -10,14 +10,14 @@ type Props = {
 const Amenities: FC<Props> = (props) => {
   const { amenities } = props;
   return (
-    <>
-      <h3 className={styles.amenityHeader}>Leiligheta har:</h3>
+    <div>
+      <h3>Leiligheta har:</h3>
       <section className={styles.amenities}>
         {amenities.map((amenity) => (
           <AmenityDisplay amenity={amenity} key={amenity.name} />
         ))}
       </section>
-    </>
+    </div>
   );
 };
 

@@ -13,7 +13,3 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
-.amenityHeader {
-  margin-top: 60px;
-}
