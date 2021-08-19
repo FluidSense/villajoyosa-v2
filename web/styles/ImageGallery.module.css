@@ -3,7 +3,7 @@
   margin: 30px auto;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-device-width: 812px) {
   .gallery {
     max-width: 100%;
   }
