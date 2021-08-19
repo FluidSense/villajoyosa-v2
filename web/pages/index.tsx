@@ -1,11 +1,9 @@
 import { NextPageContext } from "next";
-import Head from "next/head";
 import { FC } from "react";
 import client from "../sanityClient";
 import BlockContent from "@sanity/block-content-to-react";
 import styles from "../styles/Home.module.css";
 import { Amenity, PageTitle, TextBlock } from "../types/local";
-import Navbar from "../components/Navbar";
 import Amenities from "../components/Amenities";
 import { SanityImage } from "../types/sanityTypes";
 import ImageCarousel from "../components/ImageCarousel";
@@ -18,36 +16,19 @@ type Props = {
 };
 
 const Home: FC<Props> = (props) => {
-  const {
-    pageTitle: { title, subtitle },
-    textContent,
-    amenities,
-    carouselImages,
-  } = props;
+  const { textContent, amenities, carouselImages } = props;
   const [ingress, ...rest] = textContent;
   return (
     <>
-      <Head>
-        <title>Villajoyosa</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <header className={styles.header}>
-          <h1>{title}</h1>
-          <h2>{subtitle}</h2>
-        </header>
-        <ImageCarousel images={carouselImages} />
-        <Navbar />
-        <section className={styles.section}>
-          <BlockContent blocks={ingress.text} />
-          <Amenities amenities={amenities} />
-          {rest &&
-            rest.map((textBlock) => (
-              <BlockContent key={textBlock.name} blocks={textBlock.text} />
-            ))}
-        </section>
-      </main>
+      <ImageCarousel images={carouselImages} />
+      <section className={styles.section}>
+        <BlockContent blocks={ingress.text} />
+        <Amenities amenities={amenities} />
+        {rest &&
+          rest.map((textBlock) => (
+            <BlockContent key={textBlock.name} blocks={textBlock.text} />
+          ))}
+      </section>
     </>
   );
 };
