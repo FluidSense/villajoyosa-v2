@@ -20,9 +20,32 @@
   flex-direction: column;
 }
 
+.header > * {
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .header > h1 {
+    font-size: xx-large;
+    width: 90%;
+  }
+
+  .header > h2 {
+    font-size: larger;
+    width: 90%;
+  }
+}
+
 .section {
   margin: 0 20% auto 27%;
   padding: 1%;
+}
+
+@media screen and (max-width: 500px) {
+  .section {
+    margin: 0 10%;
+    padding: 1%;
+  }
 }
 
 .section > div > h3 {

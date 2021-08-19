@@ -12,4 +12,11 @@
 .amenities {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+@media screen and (max-width: 500px) {
+  .amenity > svg {
+    height: 24px;
+  }
 }

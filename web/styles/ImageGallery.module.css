@@ -2,3 +2,9 @@
   max-width: 50%;
   margin: 30px auto;
 }
+
+@media screen and (max-width: 500px) {
+  .gallery {
+    max-width: 100%;
+  }
+}
