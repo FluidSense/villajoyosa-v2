@@ -12,7 +12,7 @@ type Props = {
 const Images: FC<Props> = (props) => {
   const { images } = props;
   return (
-    <Carousel className={styles.gallery}>
+    <Carousel className={styles.gallery} autoPlay={false}>
       {images.map((image) => (
         <img
           key={image._id || image.name}

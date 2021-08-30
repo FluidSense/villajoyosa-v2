@@ -25,7 +25,7 @@ type AmenityProps = {
   amenity: Amenity;
 };
 
-const AmenityDisplay: FC<AmenityProps> = (props) => {
+export const AmenityDisplay: FC<AmenityProps> = (props) => {
   const {
     amenity: {
       display: { text, icon },
