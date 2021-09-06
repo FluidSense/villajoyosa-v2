@@ -40,9 +40,9 @@ export default {
     },
     {
       title: "Vises på side",
-      description: "Siden du vil at teksten skal vises på",
+      description: "Siden du vil at bildegalleriet skal vises på",
       name: "displayPage",
-      type: "pageSelector",
+      type: "imagePageSelector",
     },
   ],
   preview: {
