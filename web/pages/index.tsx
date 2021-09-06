@@ -47,7 +47,7 @@ export async function getStaticProps(
   const textContent = await client.fetch(textContentQuery);
 
   const carouselImagesQuery =
-    '*[_type == "imageCarousel"]{name,"imageUrl": image.asset->url}';
+    '*[_type == "gallery" && displayPage == "frontpage"]{images[]{"name": alt,"imageUrl": asset -> url}}.images[]';
   const carouselImages = await client.fetch(carouselImagesQuery);
 
   return {

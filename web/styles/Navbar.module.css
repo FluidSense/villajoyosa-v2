@@ -3,5 +3,19 @@
   width: 100%;
   justify-content: space-around;
   border-bottom: 1px solid #ccc;
-  padding: 1em;
+  padding: 1em 1em 0;
+}
+
+.nav > a {
+  padding: 1.5em 2em;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.nav > a:hover {
+  background-color: #ccc;
+}
+
+.nav > a:active {
+  box-shadow: inset 3px 3px 5px #ccc;
 }
