@@ -3,7 +3,6 @@ import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type';
-import iconPicker from 'sanity-plugin-icon-picker';
 
 import amenity from './amenity';
 import pageTitle from './pageTitle';
@@ -12,8 +11,7 @@ import location from './location';
 import textBlock from './objects/textBlock';
 import content from './content';
 import pageSelector from './objects/pageSelector';
-import imageCarousel from './imageCarousel';
-import imageGallery from './imageGallery';
+import gallery from './gallery';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -29,7 +27,6 @@ export default createSchema({
     textBlock,
     pageSelector,
     content,
-    imageCarousel,
-    imageGallery
+    gallery
   ]),
 });
