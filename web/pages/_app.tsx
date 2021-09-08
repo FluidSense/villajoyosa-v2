@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "leaflet/dist/leaflet.css";
 import Head from "next/head";
 import React from "react";
 import Navbar from "../components/Navbar";
