@@ -9,6 +9,7 @@ import { Amenity, MapPosition } from "../types/local";
 let DefaultIcon = L.icon({
   //@ts-ignore
   iconUrl: icon.src,
+  iconAnchor: [9, 44],
   //@ts-ignore
   shadowUrl: iconShadow.src,
 });
