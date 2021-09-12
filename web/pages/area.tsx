@@ -21,7 +21,7 @@ const Area: FC<Props> = (props) => {
   const { amenities } = props;
   return (
     <section className={styles.section}>
-      <Map />
+      <Map amenities={amenities} />
       {amenities.map((amenity) => (
         <AmenityDisplay amenity={amenity} key={amenity._id} />
       ))}
