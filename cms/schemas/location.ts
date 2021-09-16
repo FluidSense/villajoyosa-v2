@@ -1,5 +1,6 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
 import preview from 'part:sanity-plugin-icon-picker/preview';
+import LeafletGeopointInput from 'sanity-plugin-leaflet-input'
 
 export default {
   title: 'Butikker og lokasjoner av interesse',
@@ -17,6 +18,12 @@ export default {
       name: 'display',
       type: 'textWithIcon',
     },
+    {
+      title: "Kartmarkør",
+      name: "position",
+      type: 'geopoint',
+      inputComponent: LeafletGeopointInput
+    }
   ],
   preview: {
     select: {

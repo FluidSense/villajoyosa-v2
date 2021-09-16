@@ -13,10 +13,15 @@ export type TextWithIcon = {
   text: string;
 };
 
+export type MapPosition = {
+  lat: number;
+  lng: number;
+}
 
 export type Amenity = SanityDocument & {
   name: string;
   display: TextWithIcon;
+  position: MapPosition;
 }
 
 export type TextBlock = {

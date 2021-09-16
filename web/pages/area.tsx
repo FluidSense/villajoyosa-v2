@@ -1,24 +1,27 @@
 import { NextPageContext } from "next";
-import { FC, useMemo } from "react";
+import { FC } from "react";
 import { AmenityDisplay } from "../components/Amenities";
 import client from "../sanityClient";
 import { Amenity } from "../types/local";
 import styles from "../styles/Home.module.css";
-import AreaMap from "../components/AreaMap";
 import dynamic from "next/dynamic";
 
 type Props = {
   amenities: Amenity[];
 };
+
+const Map = dynamic(() => import("../components/AreaMap"), {
+  loading: function MapLoading() {
+    return <p>Loading map...</p>;
+  },
+  ssr: false,
+});
+
 const Area: FC<Props> = (props) => {
   const { amenities } = props;
-  const Map = dynamic(() => import("../components/AreaMap"), {
-    loading: () => <p>Loading map...</p>,
-    ssr: false,
-  });
   return (
     <section className={styles.section}>
-      <Map />
+      <Map amenities={amenities} />
       {amenities.map((amenity) => (
         <AmenityDisplay amenity={amenity} key={amenity._id} />
       ))}
@@ -28,7 +31,7 @@ const Area: FC<Props> = (props) => {
 
 export default Area;
 
-export async function getStaticProps(context: NextPageContext) {
+export const getStaticProps = async (context: NextPageContext) => {
   const amenityQuery = '*[_type == "location"]';
   const amenities = await client.fetch(amenityQuery);
   return {
@@ -36,4 +39,4 @@ export async function getStaticProps(context: NextPageContext) {
       amenities,
     },
   };
-}
+};
