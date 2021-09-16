@@ -2,6 +2,7 @@ import { FC } from "react";
 import Carousel from "react-responsive-carousel/lib/js/components/Carousel/index";
 import { SanityImage } from "../types/sanityTypes";
 import style from "../styles/ImageCarousel.module.css";
+import { urlFor } from "../urlBuilder";
 
 type Props = {
   images: SanityImage[];
@@ -24,7 +25,11 @@ const ImageCarousel: FC<Props> = (props) => {
       animationHandler="fade"
     >
       {images.map((image) => (
-        <img key={image.name} src={image.imageUrl} alt={image.name} />
+        <img
+          key={image.name}
+          src={urlFor(image.imageUrl).url()}
+          alt={image.name}
+        />
       ))}
     </Carousel>
   );
