@@ -28,7 +28,7 @@ export default Images;
 
 export const getStaticProps = async (context: NextPageContext) => {
   const imagesQuery =
-    '*[_type == "imageGallery"]{name,"imageUrl": image.asset->url}';
+    '*[_type == "gallery" && displayPage == "images"]{images[]{"name": alt,"imageUrl": asset -> url}}.images[]';
   const images = await client.fetch(imagesQuery);
   return {
     props: {

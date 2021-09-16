@@ -13,9 +13,19 @@
 }
 
 .nav > a:hover {
-  background-color: #ccc;
+  color: #6a6a6a;
 }
 
-.nav > a:active {
-  box-shadow: inset 3px 3px 5px #ccc;
+.active_nav {
+  position: relative;
+}
+
+.active_nav::after {
+  content: " ";
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  height: 3px;
+  background-color: black;
 }
