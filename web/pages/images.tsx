@@ -47,7 +47,6 @@ export const getStaticProps = async (context: NextPageContext) => {
   const imagesQuery =
     '*[_type == "gallery" && displayPage == "images"]{images[]{"name": alt,"imageUrl": asset -> url, "_id": _key}}.images[]';
   const images = await client.fetch<SanityImage[]>(imagesQuery);
-  console.log(images);
   return {
     props: {
       images,
