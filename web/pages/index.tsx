@@ -1,13 +1,12 @@
 import { NextPageContext } from "next";
 import React, { FC } from "react";
 import client from "../sanityClient";
-import BlockContent from "@sanity/block-content-to-react";
 import styles from "../styles/Home.module.css";
 import { Amenity, PageTitle, TextBlock } from "../types/local";
 import Amenities from "../components/Amenities";
 import { SanityImage } from "../types/sanityTypes";
 import ImageCarousel from "../components/ImageCarousel";
-import TextWithIconComponent from "../components/TextWithIcon";
+import BlockContentWithSerializers from "../components/BlockContentWithSerializers";
 
 type Props = {
   pageTitle: PageTitle;
@@ -23,14 +22,13 @@ const Home: FC<Props> = (props) => {
     <>
       <ImageCarousel images={carouselImages} />
       <section className={styles.section}>
-        <BlockContent blocks={ingress.text} serializers={serializers} />
+        <BlockContentWithSerializers blocks={ingress.text} />
         <Amenities amenities={amenities} />
         {rest &&
           rest.map((textBlock) => (
-            <BlockContent
+            <BlockContentWithSerializers
               key={textBlock.name}
               blocks={textBlock.text}
-              serializers={serializers}
             />
           ))}
       </section>
@@ -66,12 +64,3 @@ export async function getStaticProps(
 }
 
 export default Home;
-
-const serializers = {
-  types: {
-    textWithIcon: (props) => (
-      //<p>{JSON.stringify(props)}</p>
-      <TextWithIconComponent icon={props.node.icon} text={props.node.text} />
-    ),
-  },
-};
