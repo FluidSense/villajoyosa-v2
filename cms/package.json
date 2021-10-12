@@ -27,7 +27,8 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "sanity-plugin-icon-picker": "^2.0.1",
-    "sanity-plugin-leaflet-input": "^1.0.1"
+    "sanity-plugin-leaflet-input": "^1.0.1",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "@sanity/cli": "^2.21.0",
