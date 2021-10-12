@@ -2,6 +2,8 @@ import { FC } from "react";
 import { Amenity } from "../types/local";
 import styles from "../styles/Amenities.module.css";
 import DynamicIcon from "./DynamicIcon";
+import TextWithIcon from "./TextWithIcon";
+import TextWithIconComponent from "./TextWithIcon";
 
 type Props = {
   amenities: Amenity[];
@@ -31,12 +33,7 @@ export const AmenityDisplay: FC<AmenityProps> = (props) => {
       display: { text, icon },
     },
   } = props;
-  return (
-    <article className={styles.amenity} key={text}>
-      <DynamicIcon name={icon.name} provider={icon.provider} />
-      <p>{text}</p>
-    </article>
-  );
+  return <TextWithIconComponent icon={icon} text={text} />;
 };
 
 export default Amenities;
