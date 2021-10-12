@@ -1,15 +1,19 @@
 import TextWithIconComponent from "./TextWithIcon";
-import BlockContent from "@sanity/block-content-to-react";
+import BlockContent, {
+  BlockContentProps,
+} from "@sanity/block-content-to-react";
 
 const serializers = {
   types: {
-    textWithIcon: (props) => (
-      <TextWithIconComponent icon={props.node.icon} text={props.node.text} />
-    ),
+    textWithIcon: function textWithIconCreator(props) {
+      return (
+        <TextWithIconComponent icon={props.node.icon} text={props.node.text} />
+      );
+    },
   },
 };
 
-const BlockContentWithSerializers = (props) => (
+const BlockContentWithSerializers: React.FC<BlockContentProps> = (props) => (
   <BlockContent serializers={serializers} {...props} />
 );
 
