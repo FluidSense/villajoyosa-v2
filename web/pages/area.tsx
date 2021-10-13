@@ -20,12 +20,23 @@ const Map = dynamic(() => import("../components/AreaMap"), {
 const Area: FC<Props> = (props) => {
   const { amenities } = props;
   return (
-    <section className={styles.section}>
-      <Map amenities={amenities} />
-      {amenities.map((amenity) => (
-        <AmenityDisplay amenity={amenity} key={amenity._id} />
-      ))}
-    </section>
+    <>
+      <meta
+        key="seo-description"
+        name="description"
+        content="
+            The apartment is centrally shown on this map, along with great places to see and visit while staying here.
+
+            Leiligheten er vist sentralt på kartet, sammen med flotte steder å se og besøke mens du er her.
+          "
+      />
+      <section className={styles.section}>
+        <Map amenities={amenities} />
+        {amenities.map((amenity) => (
+          <AmenityDisplay amenity={amenity} key={amenity._id} />
+        ))}
+      </section>
+    </>
   );
 };
 

@@ -11,9 +11,20 @@ type Props = {
 const Rent: React.FC<Props> = (props) => {
   const { textContent } = props;
   return (
-    <section className={styles.section}>
-      <BlockContentWithSerializers blocks={textContent[0].text} />
-    </section>
+    <>
+      <meta
+        key="seo-description"
+        name="description"
+        content="
+            The penthouse apartment can be rented through various means, always through Allonis Homes, but soon also AirBnB.
+            
+            Leiligheten kan leies gjennom ulike kanaler. Den kan alltid gjennom Allonis Homes, men snart også AirBnB.
+          "
+      />
+      <section className={styles.section}>
+        <BlockContentWithSerializers blocks={textContent[0].text} />
+      </section>
+    </>
   );
 };
 

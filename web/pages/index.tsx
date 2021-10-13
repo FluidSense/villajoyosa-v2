@@ -7,6 +7,7 @@ import Amenities from "../components/Amenities";
 import { SanityImage } from "../types/sanityTypes";
 import ImageCarousel from "../components/ImageCarousel";
 import BlockContentWithSerializers from "../components/BlockContentWithSerializers";
+import Head from "next/head";
 
 type Props = {
   pageTitle: PageTitle;
@@ -20,6 +21,19 @@ const Home: FC<Props> = (props) => {
   const [ingress, ...rest] = textContent;
   return (
     <>
+      <Head>
+        <meta
+          key="seo-description"
+          name="description"
+          content="
+            Rental information for a private penthouse apartment in Villajoyosa (La Vila Joiosa), Alicante, Spain. 
+            With a view of the ocean, it is a hidden gem along Costa Blanca.
+
+            Utleieinformasjon for en privat toppleilighet i Villajoyosa (La Vila Joiosa), Alicante, Spania.
+            Med utsikt til havet er leiligheten en skjult perle langs Costa Blanca.
+          "
+        />
+      </Head>
       <ImageCarousel images={carouselImages} />
       <section className={styles.section}>
         <BlockContentWithSerializers blocks={ingress.text} />
