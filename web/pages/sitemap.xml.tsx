@@ -2,7 +2,7 @@ import fs from "fs";
 
 const Sitemap = () => {};
 
-export const getServerSideProps = ({ res }) => {
+export const getStaticProps = ({ res }) => {
   const baseUrl = {
     development: "http://localhost:3000",
     production: "https://villajoyosa.kvamme.land",
