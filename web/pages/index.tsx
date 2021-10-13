@@ -8,6 +8,8 @@ import { SanityImage } from "../types/sanityTypes";
 import ImageCarousel from "../components/ImageCarousel";
 import BlockContentWithSerializers from "../components/BlockContentWithSerializers";
 import Head from "next/head";
+import Header from "../components/Header";
+import { getPageTitle } from "../sanityQueries";
 
 type Props = {
   pageTitle: PageTitle;
@@ -17,7 +19,7 @@ type Props = {
 };
 
 const Home: FC<Props> = (props) => {
-  const { textContent, amenities, carouselImages } = props;
+  const { textContent, amenities, carouselImages, pageTitle } = props;
   const [ingress, ...rest] = textContent;
   return (
     <>
@@ -34,6 +36,8 @@ const Home: FC<Props> = (props) => {
           "
         />
       </Head>
+
+      <Header title={pageTitle.title} subtitle={pageTitle.subtitle} />
       <ImageCarousel images={carouselImages} />
       <section className={styles.section}>
         <BlockContentWithSerializers blocks={ingress.text} />
@@ -53,8 +57,7 @@ const Home: FC<Props> = (props) => {
 export async function getStaticProps(
   context: NextPageContext
 ): Promise<{ props: Props }> {
-  const pageTitleQuery = '*[_type == "pageTitle"][0]';
-  const pageTitle = await client.fetch(pageTitleQuery);
+  const pageTitle = await getPageTitle();
 
   const amenityQuery = '*[_type == "amenity"]';
   const amenities = await client.fetch(amenityQuery);
