@@ -1,8 +1,8 @@
 import fs from "fs";
 
-const Sitemap = () => {};
+const Sitemap = (props) => props.sitemap;
 
-export const getStaticProps = ({ res }) => {
+export const getStaticProps = () => {
   const baseUrl = {
     development: "http://localhost:3000",
     production: "https://villajoyosa.kvamme.land",
@@ -39,12 +39,10 @@ export const getStaticProps = ({ res }) => {
     </urlset>
   `;
 
-  res.setHeader("Content-Type", "text/xml");
-  res.write(sitemap);
-  res.end();
-
   return {
-    props: {},
+    props: {
+      sitemap,
+    },
   };
 };
 

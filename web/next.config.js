@@ -3,5 +3,17 @@ module.exports = {
   images: {
     domains: ['https://villajoyosa.kvamme.land/', "cdn.sanity.io"],
   },
-  generateBuildId: () => 'build'
+  generateBuildId: () => 'build',
+  headers: async () => [
+    {
+      source: '/sitemap.xml',
+      headers: [
+        {
+          key: 'Content-Type',
+          value: 'text/xml'
+        }
+
+      ]
+    }
+  ]
 }
