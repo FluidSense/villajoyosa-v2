@@ -22,16 +22,8 @@ const DynamicIcon = ({
   name: string;
   provider: string;
 }) => {
-  console.log(
-    "Trying to generate icon for ",
-    name,
-    " with provider ",
-    provider
-  );
   const providerIcons = Providers[provider];
-  console.log("ProviderIcons: ", providerIcons);
   const Icon = providerIcons(name);
-  console.log("Icon: ", Icon);
   if (!Icon) return "";
   return <Icon />;
 };
