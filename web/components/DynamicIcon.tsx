@@ -24,7 +24,7 @@ const DynamicIcon = ({
 }) => {
   const providerIcons = Providers[provider];
   const Icon = providerIcons(name);
-  if (!Icon) return "";
+  if (!Icon) return <></>;
   return <Icon />;
 };
 
