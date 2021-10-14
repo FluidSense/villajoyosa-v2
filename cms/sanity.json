@@ -15,7 +15,9 @@
     "@sanity/desk-tool",
     "icon-picker",
     "leaflet-input",
-    "media"
+    "media",
+    "@sanity/dashboard",
+    "dashboard-widget-netlify"
   ],
   "env": {
     "development": {
@@ -31,7 +33,11 @@
     },
     {
       "name": "part:@sanity/desk-tool/structure",
-      "path": "./deskStructure.ts"
+      "path": "./deskStructure"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./dashboardConfig"
     }
   ]
 }
