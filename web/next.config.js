@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
-  target: "experimental-serverless-trace",
+  target: "serverless",
   images: {
     domains: ['https://villajoyosa.kvamme.land/', "cdn.sanity.io"],
   },

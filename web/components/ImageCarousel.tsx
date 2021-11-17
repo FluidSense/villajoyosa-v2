@@ -1,12 +1,13 @@
 import { FC } from "react";
 import { SanityImage } from "../types/sanityTypes";
 import { urlFor } from "../urlBuilder";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/swiper-react.cjs";
+import SwiperCore, { Autoplay, EffectFade } from "swiper";
 
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/effect-fade";
+import "swiper/swiper.min.css";
+import "swiper/swiper-bundle.min.css";
+
+SwiperCore.use([Autoplay, EffectFade]);
 
 type Props = {
   images: SanityImage[];
@@ -15,16 +16,16 @@ type Props = {
 const ImageCarousel: FC<Props> = (props) => {
   const { images } = props;
   return (
-    <Swiper
-      modules={[Autoplay, EffectFade]}
-      effect="fade"
-      autoplay
-      speed={2500}
-    >
+    <Swiper effect="fade" autoplay speed={2500}>
       {images.map((image) => (
         <SwiperSlide key={image.name} style={{ height: "200px" }}>
           <img
-            src={urlFor(image.imageUrl).height(200).url()}
+            src={urlFor(image.imageUrl)
+              .maxHeight(200)
+              .width(1711)
+              .fit("crop")
+              .crop("focalpoint")
+              .url()}
             alt={image.name}
           />
         </SwiperSlide>
