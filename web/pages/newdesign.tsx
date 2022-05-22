@@ -131,10 +131,10 @@ function VaarLeilighet() {
         Vi leigar ut ei penthouse-leilighet i 14. etasje med utsikt over
         Middelhavet og byen Villajoyosa. Med glassfasade ut mot den luftige
         takterrassen får du sol mesteparten av dagen. Leiligheta ligg på toppen
-        av bygården "Torre Colon", som tyder Columbus-tårnet. Den ligg sentralt
-        i gata Calle Colon, med knappe 5 min å gå til hovedstranda, Playa
-        Centro. Der kan ein leiga solseng og parasoll heile dagen, til kl 19 om
-        kvelden.
+        av bygården &quot;Torre Colon&quot;, som tyder Columbus-tårnet. Den ligg
+        sentralt i gata Calle Colon, med knappe 5 min å gå til hovedstranda,
+        Playa Centro. Der kan ein leiga solseng og parasoll heile dagen, til kl
+        19 om kvelden.
       </p>
       <img src="https://picsum.photos/id/225/414/170"></img>
     </>
