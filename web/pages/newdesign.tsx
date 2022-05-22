@@ -1,5 +1,8 @@
 import { CSSProperties } from "react";
-import { IoArrowForward, IoChevronDown } from "react-icons/io5";
+import { IoArrowForward, IoChevronDown, IoWifi } from "react-icons/io5";
+import { MdBalcony, MdOutlineBeachAccess } from "react-icons/md";
+import { BsArrowRepeat } from "react-icons/bs";
+import { FaHandsWash } from "react-icons/fa";
 
 const trekkplasterStyle: CSSProperties = {
   color: "#FF934F",
@@ -92,6 +95,85 @@ export default function NewDesign() {
         <p style={scrollBaitTextStyle}>Eller les mer om leiligheten her</p>
         <IoChevronDown />
       </div>
+      <VaarLeilighet />
+      <LeilighetenHar />
     </main>
   );
 }
+
+/* Vår leilighet  */
+
+const headerStyle: CSSProperties = {
+  fontSize: "3rem",
+  marginLeft: "21px",
+  marginBottom: "20px",
+};
+
+const innholdsText: CSSProperties = {
+  marginLeft: "46px",
+  marginBottom: "28px",
+  marginRight: "24px",
+};
+
+function VaarLeilighet() {
+  return (
+    <>
+      <h2 style={headerStyle}>Vår leilighet</h2>
+      <p style={innholdsText}>
+        Vi leigar ut ei penthouse-leilighet i 14. etasje med utsikt over
+        Middelhavet og byen Villajoyosa. Med glassfasade ut mot den luftige
+        takterrassen får du sol mesteparten av dagen. Leiligheta ligg på toppen
+        av bygården "Torre Colon", som tyder Columbus-tårnet. Den ligg sentralt
+        i gata Calle Colon, med knappe 5 min å gå til hovedstranda, Playa
+        Centro. Der kan ein leiga solseng og parasoll heile dagen, til kl 19 om
+        kvelden.
+      </p>
+      <img src="https://picsum.photos/id/225/414/170"></img>
+    </>
+  );
+}
+
+const tingViHarStyle: CSSProperties = {
+  display: "flex",
+  alignItems: "center",
+  gap: "15px",
+};
+
+const leilighetenHarStyle: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  justifyContent: "start",
+  marginLeft: "30px",
+};
+
+/* Leiligheten har  */
+function LeilighetenHar() {
+  return (
+    <>
+      <h2 style={headerStyle}>Leiligheten har</h2>
+      <section style={leilighetenHarStyle}>
+        <article style={tingViHarStyle}>
+          <IoWifi size={24} />
+          <p>WiFi</p>
+        </article>
+        <article style={tingViHarStyle}>
+          <MdBalcony size={24} /> <p>Privat veranda</p>
+        </article>
+        <article style={tingViHarStyle}>
+          <BsArrowRepeat size={24} />
+          <p>Aircondition</p>
+        </article>
+        <article style={tingViHarStyle}>
+          <MdOutlineBeachAccess size={24} />
+          <p>Strandtilgang</p>
+        </article>
+        <article style={tingViHarStyle}>
+          <FaHandsWash size={24} />
+          <p>Oppvaskmaskin</p>
+        </article>
+      </section>
+    </>
+  );
+}
+
+function Bilder() {}
