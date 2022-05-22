@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { IoArrowForward, IoChevronDown } from "react-icons/io5";
 
 const trekkplasterStyle: CSSProperties = {
   color: "#FF934F",
@@ -7,11 +8,11 @@ const trekkplasterStyle: CSSProperties = {
 const ingressStyle: CSSProperties = {
   margin: "auto 34px",
   fontSize: "2.1rem",
-  marginBottom: "0",
 };
 
 const introTextStyle: CSSProperties = {
   marginTop: "24px",
+  marginBottom: "0",
 };
 
 const introSubTextStyle: CSSProperties = {
@@ -40,8 +41,11 @@ const buttonStyle: CSSProperties = {
   borderRadius: "7px",
   padding: "10px",
   fontWeight: "bold",
-  display: "block",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   fontSize: "1rem",
+  gap: "5px",
 };
 
 const mainButtonStyle: CSSProperties = {
@@ -79,12 +83,14 @@ export default function NewDesign() {
       </section>
       <img src="https://picsum.photos/id/163/414/190"></img>
       <div style={buttonWrapperStyle}>
-        <button style={mainButtonStyle}>Se leiligheten på Airbnb -{">"}</button>
+        <button style={mainButtonStyle}>
+          Se leiligheten på Airbnb <IoArrowForward />
+        </button>
         <button style={secondaryButtonStyle}>
-          Lei fra et lokalt utleiebyrå -{">"}
+          Lei fra et lokalt utleiebyrå <IoArrowForward />
         </button>
         <p style={scrollBaitTextStyle}>Eller les mer om leiligheten her</p>
-        <p style={scrollBaitTextStyle}>v</p>
+        <IoChevronDown />
       </div>
     </main>
   );
