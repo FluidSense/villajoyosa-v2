@@ -3,6 +3,7 @@ import { IoArrowForward, IoChevronDown, IoWifi } from "react-icons/io5";
 import { MdBalcony, MdOutlineBeachAccess } from "react-icons/md";
 import { BsArrowRepeat } from "react-icons/bs";
 import { FaHandsWash } from "react-icons/fa";
+import { PhotoAlbum } from "react-photo-album";
 
 const trekkplasterStyle: CSSProperties = {
   color: "#FF934F",
@@ -81,7 +82,8 @@ export default function NewDesign() {
           <span style={trekkplasterStyle}> sol på verandaen</span>
         </h1>
         <p style={introSubTextStyle}>
-          Vi leier ut vår toppleilighet i Villajoyosa, Spania
+          Vi leier ut vår toppleilighet i <br />
+          Villajoyosa, Spania
         </p>
       </section>
       <img src="https://picsum.photos/id/163/414/190"></img>
@@ -97,6 +99,7 @@ export default function NewDesign() {
       </div>
       <VaarLeilighet />
       <LeilighetenHar />
+      <Bilder />
     </main>
   );
 }
@@ -109,8 +112,13 @@ const headerStyle: CSSProperties = {
   marginBottom: "20px",
 };
 
+const vaarLeilighetHeader: CSSProperties = {
+  ...headerStyle,
+  marginTop: 0,
+};
+
 const innholdsText: CSSProperties = {
-  marginLeft: "46px",
+  marginLeft: "34px",
   marginBottom: "28px",
   marginRight: "24px",
 };
@@ -118,7 +126,7 @@ const innholdsText: CSSProperties = {
 function VaarLeilighet() {
   return (
     <>
-      <h2 style={headerStyle}>Vår leilighet</h2>
+      <h2 style={vaarLeilighetHeader}>Vår leilighet</h2>
       <p style={innholdsText}>
         Vi leigar ut ei penthouse-leilighet i 14. etasje med utsikt over
         Middelhavet og byen Villajoyosa. Med glassfasade ut mot den luftige
@@ -176,4 +184,23 @@ function LeilighetenHar() {
   );
 }
 
-function Bilder() {}
+/* Bilder */
+
+const photos = Array.from(Array(15).keys()).map((index) => {
+  const randHeight = Math.floor(Math.random() * 100 + 100);
+  const randWidth = Math.floor(Math.random() * 314 + 100);
+  return {
+    src: `https://picsum.photos/${randWidth}/${randHeight}`,
+    height: randHeight,
+    width: randWidth,
+  };
+});
+
+function Bilder() {
+  return (
+    <>
+      <h2 style={headerStyle}>Bilder</h2>
+      <PhotoAlbum layout="columns" photos={photos} columns={2} />
+    </>
+  );
+}

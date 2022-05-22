@@ -21,6 +21,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-leaflet": "^3.2.1",
+    "react-photo-album": "^1.13.4",
     "react-responsive-carousel": "^3.2.20",
     "swiper": "^6.8.0"
   },
