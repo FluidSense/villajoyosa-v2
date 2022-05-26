@@ -17,6 +17,7 @@ const ingressStyle: CSSProperties = {
 const introTextStyle: CSSProperties = {
   marginTop: "24px",
   marginBottom: "0",
+  lineHeight: "1",
 };
 
 const introSubTextStyle: CSSProperties = {
