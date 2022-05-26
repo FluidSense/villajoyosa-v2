@@ -4,67 +4,84 @@ import { MdBalcony, MdOutlineBeachAccess } from "react-icons/md";
 import { BsArrowRepeat } from "react-icons/bs";
 import { FaHandsWash } from "react-icons/fa";
 import { PhotoAlbum } from "react-photo-album";
-import styled from "styled-components";
-const trekkplasterStyle: CSSProperties = {
-  color: "#FF934F",
-};
+import styled from "@emotion/styled";
 
-const ingressStyle: CSSProperties = {
-  margin: "auto 8vw",
-  fontSize: "2.1rem",
-};
+const IngressWrapper = styled.section`
+  margin: auto 8vw;
+  font-size: 2.1rem;
 
-const introTextStyle: CSSProperties = {
-  marginTop: "24px",
-  marginBottom: "0",
-  lineHeight: "1",
-};
+  @media screen and (min-width: 769px) {
+    width: 538px;
+  }
+`;
 
-const introSubTextStyle: CSSProperties = {
-  marginTop: "16px",
-  marginBottom: "30px",
-  fontSize: "1rem",
-  fontWeight: "bold",
-};
+const IntroHeader = styled.h1`
+  margin-top: 24px;
+  margin-bottom: 0;
+  line-height: 1;
+`;
 
-const buttonWrapperStyle: CSSProperties = {
-  position: "relative",
-  top: "-40px",
-  borderRadius: "7px",
-  backgroundColor: "white",
-  width: "90%",
-  margin: "auto",
-  display: "flex",
-  alignItems: "center",
-  flexDirection: "column",
-};
+const IntroSubText = styled.p`
+  margin-top: 16px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-right: 2em;
 
-const buttonStyle: CSSProperties = {
-  textAlign: "center",
-  border: "none",
-  borderRadius: "7px",
-  padding: "10px 60px",
-  fontWeight: "bold",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  fontSize: "1rem",
-  gap: "5px",
-  minWidth: "338px",
-};
+  @media screen and (min-width: 769px) {
+    font-size: 1.25rem;
+    font-weight: normal;
+  }
+`;
 
-const mainButtonStyle: CSSProperties = {
-  ...buttonStyle,
-  margin: "21px 0 0",
-  backgroundColor: "#FF934F",
-};
+const SellingPointText = styled.span`
+  color: #ff934f;
+`;
 
-const secondaryButtonStyle: CSSProperties = {
-  ...buttonStyle,
-  margin: "13px 0",
-  backgroundColor: "#646881",
-  color: "white",
-};
+const ActionButtonSection = styled.section`
+  position: relative;
+  top: -40px;
+  border-radius: 7px;
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 769px) {
+    position: initial;
+    flex-direction: row;
+  }
+`;
+
+const ButtonStyle = styled.button`
+  text-align: center;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 60px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  gap: 5px;
+  min-width: 338px;
+`;
+
+const MainButton = styled(ButtonStyle)`
+  margin: 21px 0 0;
+  background-color: #ff934f;
+  @media screen and (min-width: 769px) {
+    margin: initial;
+  }
+`;
+
+const SecondaryButton = styled(ButtonStyle)`
+  margin: 13px 0;
+  background-color: #646881;
+  color: white;
+`;
 
 const scrollBaitTextStyle: CSSProperties = {
   fontWeight: "bold",
@@ -73,12 +90,15 @@ const scrollBaitTextStyle: CSSProperties = {
   textAlign: "center",
 };
 
-const bannerBildeStyle: CSSProperties = {
-  width: "100%",
-  maxHeight: "161px",
-  objectFit: "cover",
-  objectPosition: "left",
-};
+const FirstViewWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and (min-width: 769px) {
+    flex-direction: row;
+  }
+`;
 
 const FullwidthImage = styled.img`
   width: 100%;
@@ -87,38 +107,56 @@ const FullwidthImage = styled.img`
 `;
 
 const BannerImage = styled(FullwidthImage)`
-  max-height: 161px;
+  max-height: 238px;
 `;
 
 const ActionButtonBackgroundImage = styled(FullwidthImage)`
   height: 190px;
+  @media screen and (min-width: 769px) {
+    border-radius: 17px;
+    width: 40%;
+    margin: 0 auto;
+  }
+`;
+
+const ReadMoreBelow = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
 `;
 
 export default function NewDesign() {
   return (
     <main>
       <BannerImage src="https://picsum.photos/id/1057/1920/747"></BannerImage>
-      <section style={ingressStyle}>
-        <h1 style={introTextStyle}>
-          Nyt en ferie i Spania med
-          <span style={trekkplasterStyle}> sol på verandaen</span>
-        </h1>
-        <p style={introSubTextStyle}>
-          Vi leier ut vår toppleilighet i <br />
-          Villajoyosa, Spania
-        </p>
-      </section>
-      <ActionButtonBackgroundImage src="https://picsum.photos/id/163/1920/190"></ActionButtonBackgroundImage>
-      <div style={buttonWrapperStyle}>
-        <button style={mainButtonStyle}>
+      <FirstViewWrapper>
+        <IngressWrapper>
+          <IntroHeader>
+            Nyt en ferie i Spania med
+            <SellingPointText> sol på verandaen</SellingPointText>
+          </IntroHeader>
+          <IntroSubText>
+            Vi leier ut vår toppleilighet i Villajoyosa, Spania
+          </IntroSubText>
+        </IngressWrapper>
+        <ActionButtonBackgroundImage src="https://picsum.photos/id/163/1920/190"></ActionButtonBackgroundImage>
+      </FirstViewWrapper>
+      <ActionButtonSection>
+        <MainButton>
           Se leiligheten på Airbnb <IoArrowForward />
-        </button>
-        <button style={secondaryButtonStyle}>
+        </MainButton>
+        <SecondaryButton>
           Lei fra et lokalt utleiebyrå <IoArrowForward />
-        </button>
-        <p style={scrollBaitTextStyle}>Eller les mer om leiligheten her</p>
-        <IoChevronDown />
-      </div>
+        </SecondaryButton>
+        <ReadMoreBelow>
+          <p style={scrollBaitTextStyle}>Eller les mer om leiligheten her</p>
+          <IoChevronDown />
+        </ReadMoreBelow>
+      </ActionButtonSection>
       <VaarLeilighet />
       <LeilighetenHar />
       <Bilder />

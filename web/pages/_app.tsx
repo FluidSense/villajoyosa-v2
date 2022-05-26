@@ -7,6 +7,7 @@ import splitbee from "@splitbee/web";
 splitbee.init({
   scriptUrl: "/bee.js",
   apiUrl: "/_hive",
+  disableCookie: true,
 });
 
 function MyApp({ Component, pageProps }) {
