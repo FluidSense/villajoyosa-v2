@@ -4,7 +4,10 @@ import "leaflet/dist/leaflet.css";
 import React from "react";
 import splitbee from "@splitbee/web";
 
-splitbee.init();
+splitbee.init({
+  scriptUrl: "/bee.js",
+  apiUrl: "/_hive",
+});
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
