@@ -4,4 +4,7 @@ module.exports = {
     domains: ["https://villajoyosa.kvamme.land/", "cdn.sanity.io"],
   },
   generateBuildId: () => "build", // Should decrease build time on Netlify
+  compiler: {
+    styledComponents: true,
+  },
 };

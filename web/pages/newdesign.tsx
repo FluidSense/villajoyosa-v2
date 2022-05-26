@@ -1,16 +1,16 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import { IoArrowForward, IoChevronDown, IoWifi } from "react-icons/io5";
 import { MdBalcony, MdOutlineBeachAccess } from "react-icons/md";
 import { BsArrowRepeat } from "react-icons/bs";
 import { FaHandsWash } from "react-icons/fa";
 import { PhotoAlbum } from "react-photo-album";
-
+import styled from "styled-components";
 const trekkplasterStyle: CSSProperties = {
   color: "#FF934F",
 };
 
 const ingressStyle: CSSProperties = {
-  margin: "auto 34px",
+  margin: "auto 8vw",
   fontSize: "2.1rem",
 };
 
@@ -39,17 +39,17 @@ const buttonWrapperStyle: CSSProperties = {
 };
 
 const buttonStyle: CSSProperties = {
-  width: "90%",
   textAlign: "center",
   border: "none",
   borderRadius: "7px",
-  padding: "10px",
+  padding: "10px 60px",
   fontWeight: "bold",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   fontSize: "1rem",
   gap: "5px",
+  minWidth: "338px",
 };
 
 const mainButtonStyle: CSSProperties = {
@@ -72,10 +72,31 @@ const scrollBaitTextStyle: CSSProperties = {
   textAlign: "center",
 };
 
+const bannerBildeStyle: CSSProperties = {
+  width: "100%",
+  maxHeight: "161px",
+  objectFit: "cover",
+  objectPosition: "left",
+};
+
+const FullwidthImage = styled.img`
+  width: 100%;
+  object-fit: cover;
+  object-position: left;
+`;
+
+const BannerImage = styled(FullwidthImage)`
+  max-height: 161px;
+`;
+
+const ActionButtonBackgroundImage = styled(FullwidthImage)`
+  height: 190px;
+`;
+
 export default function NewDesign() {
   return (
     <main>
-      <img src="https://picsum.photos/id/1057/414/161"></img>
+      <BannerImage src="https://picsum.photos/id/1057/1920/747"></BannerImage>
       <section style={ingressStyle}>
         <h1 style={introTextStyle}>
           Nyt en ferie i Spania med
@@ -86,7 +107,7 @@ export default function NewDesign() {
           Villajoyosa, Spania
         </p>
       </section>
-      <img src="https://picsum.photos/id/163/414/190"></img>
+      <ActionButtonBackgroundImage src="https://picsum.photos/id/163/1920/190"></ActionButtonBackgroundImage>
       <div style={buttonWrapperStyle}>
         <button style={mainButtonStyle}>
           Se leiligheten på Airbnb <IoArrowForward />
@@ -123,6 +144,11 @@ const innholdsText: CSSProperties = {
   marginRight: "24px",
 };
 
+const VaarLeilighetImage = styled(FullwidthImage)`
+  height: 170px;
+  object-position: center;
+`;
+
 function VaarLeilighet() {
   return (
     <>
@@ -136,7 +162,7 @@ function VaarLeilighet() {
         Playa Centro. Der kan ein leiga solseng og parasoll heile dagen, til kl
         19 om kvelden.
       </p>
-      <img src="https://picsum.photos/id/225/414/170"></img>
+      <VaarLeilighetImage src="https://picsum.photos/id/225/1920/170"></VaarLeilighetImage>
     </>
   );
 }
@@ -186,17 +212,22 @@ function LeilighetenHar() {
 
 /* Bilder */
 
-const photos = Array.from(Array(15).keys()).map((index) => {
-  const randHeight = Math.floor(Math.random() * 100 + 100);
-  const randWidth = Math.floor(Math.random() * 314 + 100);
-  return {
-    src: `https://picsum.photos/${randWidth}/${randHeight}`,
-    height: randHeight,
-    width: randWidth,
-  };
-});
-
 function Bilder() {
+  const [photos, setPhotos] =
+    useState<{ src: string; height: number; width: number }[]>();
+
+  useEffect(() => {
+    const generatedPhotos = Array.from(Array(15).keys()).map((index) => {
+      const randHeight = Math.floor(Math.random() * 100 + 100);
+      const randWidth = Math.floor(Math.random() * 314 + 100);
+      return {
+        src: `https://picsum.photos/${randWidth}/${randHeight}`,
+        height: randHeight,
+        width: randWidth,
+      };
+    });
+    setPhotos(generatedPhotos);
+  }, []);
   return (
     <>
       <h2 style={headerStyle}>Bilder</h2>
