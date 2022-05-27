@@ -137,6 +137,26 @@ const ReadMoreBelow = styled.div`
   }
 `;
 
+const SeparatorLine = styled.div`
+  display: none;
+  @media screen and (min-width: 769px) {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeilighetInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 769px) {
+    flex-direction: row;
+    & > * {
+      width: 50%;
+    }
+  }
+`;
+
 export default function NewDesign() {
   return (
     <main>
@@ -151,7 +171,7 @@ export default function NewDesign() {
             Vi leier ut vår toppleilighet i Villajoyosa, Spania
           </IntroSubText>
         </IngressWrapper>
-        <ActionButtonBackgroundImage src="https://picsum.photos/id/163/1920/190"></ActionButtonBackgroundImage>
+        <ActionButtonBackgroundImage src="https://picsum.photos/id/163/1920/740"></ActionButtonBackgroundImage>
       </FirstViewWrapper>
       <ActionButtonSection>
         <MainButton>
@@ -165,8 +185,11 @@ export default function NewDesign() {
           <IoChevronDown />
         </ReadMoreBelow>
       </ActionButtonSection>
-      <VaarLeilighet />
-      <LeilighetenHar />
+      <SeparatorLine />
+      <LeilighetInfoWrapper>
+        <VaarLeilighet />
+        <LeilighetenHar />
+      </LeilighetInfoWrapper>
       <Bilder />
     </main>
   );
@@ -185,22 +208,70 @@ const vaarLeilighetHeader: CSSProperties = {
   marginTop: 0,
 };
 
+const Header = styled.h2`
+  font-size: 3rem;
+  margin-left: 21px;
+  margin-bottom: 20px;
+`;
+
+const VaarLeilighetHeader = styled(Header)`
+  margin-top: 0;
+  @media screen and (min-width: 769px) {
+    margin-top: 47px;
+    margin-bottom: 33px;
+    margin-left: 193px;
+  }
+`;
+
 const innholdsText: CSSProperties = {
   marginLeft: "34px",
   marginBottom: "28px",
   marginRight: "24px",
 };
 
+const InnholdsText = styled.p`
+  margin-left: 34px;
+  margin-bottom: 28px;
+  margin-right: 24px;
+  @media screen and (min-width: 769px) {
+    margin-left: 134px;
+    width: 60%;
+  }
+`;
+
 const VaarLeilighetImage = styled(FullwidthImage)`
   height: 170px;
   object-position: center;
+  @media screen and (min-width: 769px) {
+    border-radius: 8px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: block;
+    margin: auto;
+    width: 70%;
+    margin-top: 76px;
+    height: 307px;
+  }
+`;
+
+const InnerSeparatorLine = styled.div`
+  @media screen and (min-width: 769px) {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+`;
+const NextSectionSeparatorLine = styled(InnerSeparatorLine)`
+  @media screen and (min-width: 769px) {
+    margin: auto;
+    margin-top: 78px;
+    width: 80%;
+  }
 `;
 
 function VaarLeilighet() {
   return (
-    <>
-      <h2 style={vaarLeilighetHeader}>Vår leilighet</h2>
-      <p style={innholdsText}>
+    <section>
+      <VaarLeilighetHeader>Vår leilighet</VaarLeilighetHeader>
+      <InnholdsText>
         Vi leigar ut ei penthouse-leilighet i 14. etasje med utsikt over
         Middelhavet og byen Villajoyosa. Med glassfasade ut mot den luftige
         takterrassen får du sol mesteparten av dagen. Leiligheta ligg på toppen
@@ -208,63 +279,119 @@ function VaarLeilighet() {
         sentralt i gata Calle Colon, med knappe 5 min å gå til hovedstranda,
         Playa Centro. Der kan ein leiga solseng og parasoll heile dagen, til kl
         19 om kvelden.
-      </p>
+      </InnholdsText>
       <VaarLeilighetImage src="https://picsum.photos/id/225/1920/170"></VaarLeilighetImage>
-    </>
+      <NextSectionSeparatorLine />
+    </section>
   );
 }
 
+/* Leiligheten har  */
 const tingViHarStyle: CSSProperties = {
   display: "flex",
   alignItems: "center",
   gap: "15px",
 };
 
-const leilighetenHarStyle: CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  justifyContent: "start",
-  marginLeft: "30px",
-};
+const LeilighetenHarStyle = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: start;
+  margin-left: 30px;
+  @media screen and (min-width: 769px) {
+    margin-top: 48px;
+  }
+`;
 
-/* Leiligheten har  */
+const LeilighetenHarWrapper = styled.article`
+  @media screen and (min-width: 769px) {
+    width: 70%;
+    border-radius: 17px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #eeecec;
+    padding: 59px;
+    margin: auto;
+  }
+`;
+
+const LeilighetenHarHeader = styled(Header)`
+  @media screen and (min-width: 769px) {
+    margin-top: 0;
+  }
+`;
+
+const LeilighetenHarHalfPageSize = styled.section`
+  @media screen and (min-width: 769px) {
+    align-self: center;
+  }
+`;
+
 function LeilighetenHar() {
   return (
-    <>
-      <h2 style={headerStyle}>Leiligheten har</h2>
-      <section style={leilighetenHarStyle}>
-        <article style={tingViHarStyle}>
-          <IoWifi size={24} />
-          <p>WiFi</p>
-        </article>
-        <article style={tingViHarStyle}>
-          <MdBalcony size={24} /> <p>Privat veranda</p>
-        </article>
-        <article style={tingViHarStyle}>
-          <BsArrowRepeat size={24} />
-          <p>Aircondition</p>
-        </article>
-        <article style={tingViHarStyle}>
-          <MdOutlineBeachAccess size={24} />
-          <p>Strandtilgang</p>
-        </article>
-        <article style={tingViHarStyle}>
-          <FaHandsWash size={24} />
-          <p>Oppvaskmaskin</p>
-        </article>
-      </section>
-    </>
+    <LeilighetenHarHalfPageSize>
+      <LeilighetenHarWrapper>
+        <LeilighetenHarHeader>Leiligheten har</LeilighetenHarHeader>
+        <InnerSeparatorLine />
+        <LeilighetenHarStyle>
+          <article style={tingViHarStyle}>
+            <IoWifi size={24} />
+            <p>WiFi</p>
+          </article>
+          <article style={tingViHarStyle}>
+            <MdBalcony size={24} /> <p>Privat veranda</p>
+          </article>
+          <article style={tingViHarStyle}>
+            <BsArrowRepeat size={24} />
+            <p>Aircondition</p>
+          </article>
+          <article style={tingViHarStyle}>
+            <MdOutlineBeachAccess size={24} />
+            <p>Strandtilgang</p>
+          </article>
+          <article style={tingViHarStyle}>
+            <FaHandsWash size={24} />
+            <p>Oppvaskmaskin</p>
+          </article>
+        </LeilighetenHarStyle>
+      </LeilighetenHarWrapper>
+    </LeilighetenHarHalfPageSize>
   );
 }
 
 /* Bilder */
+
+const BildeHeader = styled(VaarLeilighetHeader)``;
+
+const MobileOnly = styled.div`
+  display: initial;
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const DesktopOnly = styled.div`
+  display: none;
+  @media screen and (min-width: 769px) {
+    display: initial;
+  }
+`;
+
+const Center = styled.div`
+  display: block;
+  margin: auto;
+`;
+
+const Width90Centered = styled(Center)`
+  width: 90%;
+  margin-bottom: 300px;
+`;
 
 function Bilder() {
   const [photos, setPhotos] =
     useState<{ src: string; height: number; width: number }[]>();
 
   useEffect(() => {
-    const generatedPhotos = Array.from(Array(15).keys()).map((index) => {
+    const generatedPhotos = Array.from(Array(15).keys()).map(() => {
       const randHeight = Math.floor(Math.random() * 100 + 100);
       const randWidth = Math.floor(Math.random() * 314 + 100);
       return {
@@ -277,8 +404,15 @@ function Bilder() {
   }, []);
   return (
     <>
-      <h2 style={headerStyle}>Bilder</h2>
-      <PhotoAlbum layout="columns" photos={photos} columns={2} />
+      <BildeHeader>Bilder</BildeHeader>
+      <MobileOnly>
+        <PhotoAlbum layout="columns" photos={photos} columns={2} />
+      </MobileOnly>
+      <DesktopOnly>
+        <Width90Centered>
+          <PhotoAlbum layout="rows" photos={photos} targetRowHeight={200} />
+        </Width90Centered>
+      </DesktopOnly>
     </>
   );
 }
