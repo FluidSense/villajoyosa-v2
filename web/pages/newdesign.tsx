@@ -12,6 +12,7 @@ const IngressWrapper = styled.section`
 
   @media screen and (min-width: 769px) {
     width: 538px;
+    margin: 0 8vw;
   }
 `;
 
@@ -19,6 +20,9 @@ const IntroHeader = styled.h1`
   margin-top: 24px;
   margin-bottom: 0;
   line-height: 1;
+  @media screen and (min-width: 769px) {
+    margin-top: initial;
+  }
 `;
 
 const IntroSubText = styled.p`
@@ -52,6 +56,7 @@ const ActionButtonSection = styled.section`
   @media screen and (min-width: 769px) {
     position: initial;
     flex-direction: row;
+    margin-bottom: 181px;
   }
 `;
 
@@ -74,6 +79,7 @@ const MainButton = styled(ButtonStyle)`
   background-color: #ff934f;
   @media screen and (min-width: 769px) {
     margin: initial;
+    margin-right: 29px;
   }
 `;
 
@@ -97,6 +103,7 @@ const FirstViewWrapper = styled.div`
 
   @media screen and (min-width: 769px) {
     flex-direction: row;
+    margin-top: 138px;
   }
 `;
 
@@ -114,7 +121,8 @@ const ActionButtonBackgroundImage = styled(FullwidthImage)`
   height: 190px;
   @media screen and (min-width: 769px) {
     border-radius: 17px;
-    width: 40%;
+    width: 738px;
+    height: 347px;
     margin: 0 auto;
   }
 `;
