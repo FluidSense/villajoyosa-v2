@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import PhotoAlbum from "react-photo-album";
+import { Lightbox } from "yet-another-react-lightbox";
 import { VaarLeilighetHeader } from "./VaarLeilighet";
 
 const BildeHeader = styled(VaarLeilighetHeader)``;
@@ -32,6 +33,7 @@ const Width90Centered = styled(Center)`
 export default function Bilder() {
   const [photos, setPhotos] =
     useState<{ src: string; height: number; width: number }[]>();
+  const [index, setIndex] = useState(-1);
 
   useEffect(() => {
     const generatedPhotos = Array.from(Array(15).keys()).map(() => {
@@ -53,7 +55,22 @@ export default function Bilder() {
       </MobileOnly>
       <DesktopOnly>
         <Width90Centered>
-          <PhotoAlbum layout="rows" photos={photos} targetRowHeight={200} />
+          <PhotoAlbum
+            layout="rows"
+            photos={photos}
+            targetRowHeight={200}
+            onClick={(_event, _photo, index) => setIndex(index)}
+          />
+          <Lightbox
+            //@ts-ignore
+            slides={photos}
+            //@ts-ignore
+            open={index >= 0}
+            //@ts-ignore
+            index={index}
+            //@ts-ignore
+            close={() => setIndex(-1)}
+          />
         </Width90Centered>
       </DesktopOnly>
     </>
