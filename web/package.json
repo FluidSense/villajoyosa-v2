@@ -25,7 +25,8 @@
     "react-leaflet": "^3.2.1",
     "react-photo-album": "^1.13.4",
     "react-responsive-carousel": "^3.2.20",
-    "swiper": "^6.8.0"
+    "swiper": "^6.8.0",
+    "yet-another-react-lightbox": "^1.2.0"
   },
   "devDependencies": {
     "@types/leaflet": "^1.7.5",
@@ -34,5 +35,8 @@
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.1",
     "typescript": "^4.4.0"
+  },
+  "overrides": {
+    "eventsource": ">=2.0.2"
   }
 }
