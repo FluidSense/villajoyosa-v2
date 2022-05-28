@@ -4,7 +4,7 @@ import { BsArrowRepeat } from "react-icons/bs";
 import { FaHandsWash } from "react-icons/fa";
 import { IoWifi } from "react-icons/io5";
 import { MdBalcony, MdOutlineBeachAccess } from "react-icons/md";
-import { Header } from "./common";
+import { Header as BaseHeader } from "./common";
 
 /* Leiligheten har  */
 const tingViHarStyle: CSSProperties = {
@@ -23,7 +23,7 @@ const LeilighetenHarStyle = styled.section`
   }
 `;
 
-const LeilighetenHarWrapper = styled.article`
+const Shadowbox = styled.article`
   @media screen and (min-width: 769px) {
     width: 70%;
     border-radius: 17px;
@@ -34,13 +34,13 @@ const LeilighetenHarWrapper = styled.article`
   }
 `;
 
-const LeilighetenHarHeader = styled(Header)`
+const Header = styled(BaseHeader)`
   @media screen and (min-width: 769px) {
     margin-top: 0;
   }
 `;
 
-const LeilighetenHarHalfPageSize = styled.section`
+const DesktopVerticalCenter = styled.section`
   @media screen and (min-width: 769px) {
     align-self: center;
   }
@@ -55,9 +55,9 @@ export const InnerSeparatorLine = styled.div`
 
 export default function LeilighetenHar() {
   return (
-    <LeilighetenHarHalfPageSize>
-      <LeilighetenHarWrapper>
-        <LeilighetenHarHeader>Leiligheten har</LeilighetenHarHeader>
+    <DesktopVerticalCenter>
+      <Shadowbox>
+        <Header>Leiligheten har</Header>
         <InnerSeparatorLine />
         <LeilighetenHarStyle>
           <article style={tingViHarStyle}>
@@ -80,7 +80,7 @@ export default function LeilighetenHar() {
             <p>Oppvaskmaskin</p>
           </article>
         </LeilighetenHarStyle>
-      </LeilighetenHarWrapper>
-    </LeilighetenHarHalfPageSize>
+      </Shadowbox>
+    </DesktopVerticalCenter>
   );
 }

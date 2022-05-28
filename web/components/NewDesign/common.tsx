@@ -11,3 +11,9 @@ export const FullwidthImage = styled.img`
   object-fit: cover;
   object-position: left;
 `;
+
+export const Page = styled.section`
+  @media screen and (min-width: 769px) {
+    height: 90vh;
+  }
+`;

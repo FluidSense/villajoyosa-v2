@@ -10,6 +10,7 @@ import Introduction from "components/NewDesign/Introduction";
 import VaarLeilighet from "components/NewDesign/VaarLeilighet";
 import LeilighetenHar from "components/NewDesign/LeilighetenHar";
 import Bilder from "components/NewDesign/Bilder";
+import { Page } from "components/NewDesign/common";
 
 type Props = {
   pageTitle: PageTitle;
@@ -57,13 +58,19 @@ const Home: FC<Props> = (props) => {
         />
       </Head>
       <main>
-        <Introduction />
+        <Page>
+          <Introduction />
+        </Page>
         <SeparatorLine />
-        <LeilighetInfoWrapper>
-          <VaarLeilighet />
-          <LeilighetenHar />
-        </LeilighetInfoWrapper>
-        <Bilder />
+        <Page>
+          <LeilighetInfoWrapper>
+            <VaarLeilighet />
+            <LeilighetenHar />
+          </LeilighetInfoWrapper>
+        </Page>
+        <Page>
+          <Bilder />
+        </Page>
       </main>
     </>
   );
