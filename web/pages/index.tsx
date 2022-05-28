@@ -1,15 +1,15 @@
 import { NextPageContext } from "next";
 import React, { FC } from "react";
 import client from "../sanityClient";
-import styles from "../styles/Home.module.css";
 import { Amenity, PageTitle, TextBlock } from "../types/local";
-import Amenities from "../components/Amenities";
 import { SanityImage } from "../types/sanityTypes";
-import ImageCarousel from "../components/ImageCarousel";
-import BlockContentWithSerializers from "../components/BlockContentWithSerializers";
 import Head from "next/head";
-import Header from "../components/Header";
 import { getPageTitle } from "../sanityQueries";
+import styled from "@emotion/styled";
+import Introduction from "components/NewDesign/Introduction";
+import VaarLeilighet from "components/NewDesign/VaarLeilighet";
+import LeilighetenHar from "components/NewDesign/LeilighetenHar";
+import Bilder from "components/NewDesign/Bilder";
 
 type Props = {
   pageTitle: PageTitle;
@@ -17,6 +17,26 @@ type Props = {
   textContent: TextBlock[];
   carouselImages: SanityImage[];
 };
+
+const SeparatorLine = styled.div`
+  display: none;
+  @media screen and (min-width: 769px) {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeilighetInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 769px) {
+    flex-direction: row;
+    & > * {
+      width: 50%;
+    }
+  }
+`;
 
 const Home: FC<Props> = (props) => {
   const { textContent, amenities, carouselImages, pageTitle } = props;
@@ -36,20 +56,15 @@ const Home: FC<Props> = (props) => {
           "
         />
       </Head>
-
-      <Header title={pageTitle.title} subtitle={pageTitle.subtitle} />
-      <ImageCarousel images={carouselImages} />
-      <section className={styles.section}>
-        <BlockContentWithSerializers blocks={ingress.text} />
-        <Amenities amenities={amenities} />
-        {rest &&
-          rest.map((textBlock) => (
-            <BlockContentWithSerializers
-              key={textBlock.name}
-              blocks={textBlock.text}
-            />
-          ))}
-      </section>
+      <main>
+        <Introduction />
+        <SeparatorLine />
+        <LeilighetInfoWrapper>
+          <VaarLeilighet />
+          <LeilighetenHar />
+        </LeilighetInfoWrapper>
+        <Bilder />
+      </main>
     </>
   );
 };

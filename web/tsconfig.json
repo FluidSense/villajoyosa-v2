@@ -17,13 +17,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": "./"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/NewDesign"  ],
   "exclude": [
     "node_modules"
   ]
