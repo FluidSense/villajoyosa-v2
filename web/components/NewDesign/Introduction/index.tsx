@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { FullwidthImage } from "components/NewDesign/common";
+import { ImageAtStaticPosition } from "types/local";
 import IntroductionText from "./IntroductionText";
 import RentalButtons from "./RentalButtons";
 
@@ -27,7 +28,10 @@ const FirstViewWrapper = styled.div`
 `;
 
 const BannerImage = styled(FullwidthImage)`
-  max-height: 238px;
+  max-height: 20vh;
+  @media screen and (min-width: 769px) {
+    max-height: 238px;
+  }
 `;
 
 const ActionButtonBackgroundImage = styled(FullwidthImage)`
@@ -37,19 +41,29 @@ const ActionButtonBackgroundImage = styled(FullwidthImage)`
     width: 738px;
     height: 347px;
     margin: 40px auto 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
-export default function Introduction() {
+type Props = {
+  bannerImage?: ImageAtStaticPosition;
+  actionImage?: ImageAtStaticPosition;
+};
+
+export default function Introduction({ bannerImage, actionImage }: Props) {
+  const bannerImageUrl =
+    bannerImage?.image?.imageUrl || "https://picsum.photos/id/1057/1920/747";
+  const actionButtonImageUrl =
+    actionImage?.image?.imageUrl || "https://picsum.photos/id/163/1920/740";
   return (
     <>
-      <BannerImage src="https://picsum.photos/id/1057/1920/747"></BannerImage>
+      <BannerImage src={bannerImageUrl}></BannerImage>
       <FirstViewWrapper>
         <IngressWrapper>
           <IntroductionText />
         </IngressWrapper>
         <section>
-          <ActionButtonBackgroundImage src="https://picsum.photos/id/163/1920/740"></ActionButtonBackgroundImage>
+          <ActionButtonBackgroundImage src={actionButtonImageUrl} />
         </section>
       </FirstViewWrapper>
       <RentalButtons />

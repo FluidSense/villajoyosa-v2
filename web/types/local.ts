@@ -1,7 +1,7 @@
 import { SanityDocument } from "@sanity/client";
-import { SanityIcon, SanityText } from "./sanityTypes";
+import { SanityIcon, SanityImage, SanityText } from "./sanityTypes";
 
-type Pages = 'frontpage' | 'area' | 'rent' | 'transport';
+type Pages = "frontpage" | "area" | "rent" | "transport";
 
 export type PageTitle = {
   title: string;
@@ -16,16 +16,27 @@ export type TextWithIcon = {
 export type MapPosition = {
   lat: number;
   lng: number;
-}
+};
 
 export type Amenity = SanityDocument & {
   name: string;
   display: TextWithIcon;
   position: MapPosition;
-}
+};
 
 export type TextBlock = {
   name: string;
   displayPage: Pages;
   text: SanityText;
+};
+
+export enum ImagePosition {
+  VaarLeilighet = "vaarleilighet",
+  Banner = "banner",
+  ActionButtons = "actionbuttons",
 }
+
+export type ImageAtStaticPosition = SanityDocument & {
+  position: ImagePosition;
+  image: SanityImage;
+};

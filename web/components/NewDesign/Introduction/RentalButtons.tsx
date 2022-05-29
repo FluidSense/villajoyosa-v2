@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { CSSProperties } from "react";
 import { IoArrowForward, IoChevronDown } from "react-icons/io5";
 
-const ButtonStyle = styled.button`
+const ButtonStyle = styled.a`
   text-align: center;
   border: none;
   border-radius: 7px;
@@ -14,6 +14,10 @@ const ButtonStyle = styled.button`
   font-size: 1rem;
   gap: 5px;
   min-width: 338px;
+  transition: filter 0.1s ease-in-out;
+  &:hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
 `;
 
 const MainButton = styled(ButtonStyle)`
@@ -68,10 +72,16 @@ const ActionButtonSection = styled.section`
 export default function RentalButtons() {
   return (
     <ActionButtonSection>
-      <MainButton>
+      <MainButton
+        href="https://www.airbnb.no/rooms/52714065?guests=1&adults=1&s=67&unique_share_id=1182380a-eccb-4dfb-a39d-8e7313984ebe"
+        target="_blank"
+      >
         Se leiligheten på Airbnb <IoArrowForward />
       </MainButton>
-      <SecondaryButton>
+      <SecondaryButton
+        href="https://allonishomes.com/property/559/penthouse/short-time-rental/spain/alicante-costa-blanca/villajoyosa/urban-centre/"
+        target="_blank"
+      >
         Lei fra et lokalt utleiebyrå <IoArrowForward />
       </SecondaryButton>
       <ReadMoreBelow>

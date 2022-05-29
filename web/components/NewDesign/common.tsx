@@ -14,6 +14,6 @@ export const FullwidthImage = styled.img`
 
 export const Page = styled.section`
   @media screen and (min-width: 769px) {
-    height: 90vh;
+    min-height: 90vh;
   }
 `;

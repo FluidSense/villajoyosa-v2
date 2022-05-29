@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import PhotoAlbum from "react-photo-album";
+import { SanityImage } from "types/sanityTypes";
 import { Lightbox } from "yet-another-react-lightbox";
 import { VaarLeilighetHeader } from "./VaarLeilighet";
 
@@ -30,30 +31,26 @@ const Width90Centered = styled(Center)`
   margin-bottom: 300px;
 `;
 
-export default function Bilder() {
-  const [photos, setPhotos] =
-    useState<{ src: string; height: number; width: number }[]>();
+type Props = {
+  images: any[];
+};
+
+export default function Bilder({ images }: Props) {
   const [index, setIndex] = useState(-1);
 
-  useEffect(() => {
-    const generatedPhotos = Array.from(Array(15).keys()).map(() => {
-      const randHeight = Math.floor(Math.random() * 100 + 100);
-      const randWidth = Math.floor(Math.random() * 314 + 100);
-      return {
-        src: `https://picsum.photos/${randWidth}/${randHeight}`,
-        height: randHeight,
-        width: randWidth,
-      };
-    });
-    setPhotos(generatedPhotos);
-  }, []);
+  const imagesInPhotoAlbumFormat = images.map((img) => ({
+    height: img.dimensions.height,
+    width: img.dimensions.width,
+    src: img.url,
+  }));
+
   return (
     <>
       <BildeHeader>Bilder</BildeHeader>
       <MobileOnly>
         <PhotoAlbum
           layout="columns"
-          photos={photos}
+          photos={imagesInPhotoAlbumFormat}
           columns={2}
           onClick={(_event, _photo, index) => setIndex(index)}
         />
@@ -62,20 +59,16 @@ export default function Bilder() {
         <Width90Centered>
           <PhotoAlbum
             layout="rows"
-            photos={photos}
+            photos={imagesInPhotoAlbumFormat}
             targetRowHeight={200}
             onClick={(_event, _photo, index) => setIndex(index)}
           />
         </Width90Centered>
       </DesktopOnly>
       <Lightbox
-        //@ts-ignore
-        slides={photos}
-        //@ts-ignore
+        slides={imagesInPhotoAlbumFormat}
         open={index >= 0}
-        //@ts-ignore
         index={index}
-        //@ts-ignore
         close={() => setIndex(-1)}
       />
     </>

@@ -1,6 +1,7 @@
 /* Vår leilighet  */
 
 import styled from "@emotion/styled";
+import { ImageAtStaticPosition } from "types/local";
 import { FullwidthImage, Header } from "./common";
 import { InnerSeparatorLine } from "./LeilighetenHar";
 
@@ -37,15 +38,13 @@ const VaarLeilighetImage = styled(FullwidthImage)`
   }
 `;
 
-const NextSectionSeparatorLine = styled(InnerSeparatorLine)`
-  @media screen and (min-width: 769px) {
-    margin: auto;
-    margin-top: 78px;
-    width: 80%;
-  }
-`;
+type Props = {
+  image?: ImageAtStaticPosition;
+};
 
-export default function VaarLeilighet() {
+export default function VaarLeilighet({ image }: Props) {
+  const imageUrl =
+    image?.image?.imageUrl || "https://picsum.photos/id/225/1920/170";
   return (
     <section>
       <VaarLeilighetHeader>Vår leilighet</VaarLeilighetHeader>
@@ -58,7 +57,7 @@ export default function VaarLeilighet() {
         Playa Centro. Der kan ein leiga solseng og parasoll heile dagen, til kl
         19 om kvelden.
       </InnholdsText>
-      <VaarLeilighetImage src="https://picsum.photos/id/225/1920/170"></VaarLeilighetImage>
+      <VaarLeilighetImage src={imageUrl} />
     </section>
   );
 }

@@ -1,10 +1,15 @@
 import { NextPageContext } from "next";
 import React, { FC } from "react";
 import client from "../sanityClient";
-import { Amenity, PageTitle, TextBlock } from "../types/local";
+import {
+  Amenity,
+  ImageAtStaticPosition,
+  ImagePosition,
+  PageTitle,
+  TextBlock,
+} from "../types/local";
 import { SanityImage } from "../types/sanityTypes";
 import Head from "next/head";
-import { getPageTitle } from "../sanityQueries";
 import styled from "@emotion/styled";
 import Introduction from "components/NewDesign/Introduction";
 import VaarLeilighet from "components/NewDesign/VaarLeilighet";
@@ -13,10 +18,9 @@ import Bilder from "components/NewDesign/Bilder";
 import { Page } from "components/NewDesign/common";
 
 type Props = {
-  pageTitle: PageTitle;
   amenities: Amenity[];
-  textContent: TextBlock[];
   carouselImages: SanityImage[];
+  imagesAtStaticPositions: ImageAtStaticPosition[];
 };
 
 const SeparatorLine = styled.div`
@@ -40,8 +44,8 @@ const LeilighetInfoWrapper = styled.div`
 `;
 
 const Home: FC<Props> = (props) => {
-  const { textContent, amenities, carouselImages, pageTitle } = props;
-  const [ingress, ...rest] = textContent;
+  const { amenities, carouselImages, imagesAtStaticPositions } = props;
+  console.log("Images: ", imagesAtStaticPositions);
   return (
     <>
       <Head>
@@ -59,17 +63,28 @@ const Home: FC<Props> = (props) => {
       </Head>
       <main>
         <Page>
-          <Introduction />
+          <Introduction
+            bannerImage={imagesAtStaticPositions.find(
+              (img) => img.position === ImagePosition.Banner
+            )}
+            actionImage={imagesAtStaticPositions.find(
+              async (img) => img.position === ImagePosition.ActionButtons
+            )}
+          />
         </Page>
         <SeparatorLine />
         <Page>
           <LeilighetInfoWrapper>
-            <VaarLeilighet />
+            <VaarLeilighet
+              image={imagesAtStaticPositions.find(
+                (img) => img.position === ImagePosition.VaarLeilighet
+              )}
+            />
             <LeilighetenHar />
           </LeilighetInfoWrapper>
         </Page>
         <Page>
-          <Bilder />
+          <Bilder images={carouselImages} />
         </Page>
       </main>
     </>
@@ -79,25 +94,24 @@ const Home: FC<Props> = (props) => {
 export async function getStaticProps(
   context: NextPageContext
 ): Promise<{ props: Props }> {
-  const pageTitle = await getPageTitle();
-
   const amenityQuery = '*[_type == "amenity"]';
   const amenities = await client.fetch(amenityQuery);
 
-  const textContentQuery =
-    '*[_type == "content" && displayPage == "frontpage"]';
-  const textContent = await client.fetch(textContentQuery);
-
   const carouselImagesQuery =
-    '*[_type == "gallery" && displayPage == "frontpage"]{images[]{"name": alt,"imageUrl": asset -> url}}.images[]';
+    '*[_type == "gallery" && name == "Beta"]{images[]{"url": asset->url, "dimensions": asset->metadata.dimensions}}.images[]';
   const carouselImages = await client.fetch(carouselImagesQuery);
+
+  const imageAtStaticPositionsQuery =
+    '*[_type == "imagePosition"]{...@, "image": { "imageUrl": image.asset -> url}}';
+  const imagesAtStaticPositions = await client.fetch(
+    imageAtStaticPositionsQuery
+  );
 
   return {
     props: {
-      pageTitle,
       amenities,
-      textContent,
       carouselImages,
+      imagesAtStaticPositions,
     },
   };
 }
