@@ -51,7 +51,12 @@ export default function Bilder() {
     <>
       <BildeHeader>Bilder</BildeHeader>
       <MobileOnly>
-        <PhotoAlbum layout="columns" photos={photos} columns={2} />
+        <PhotoAlbum
+          layout="columns"
+          photos={photos}
+          columns={2}
+          onClick={(_event, _photo, index) => setIndex(index)}
+        />
       </MobileOnly>
       <DesktopOnly>
         <Width90Centered>
@@ -61,18 +66,18 @@ export default function Bilder() {
             targetRowHeight={200}
             onClick={(_event, _photo, index) => setIndex(index)}
           />
-          <Lightbox
-            //@ts-ignore
-            slides={photos}
-            //@ts-ignore
-            open={index >= 0}
-            //@ts-ignore
-            index={index}
-            //@ts-ignore
-            close={() => setIndex(-1)}
-          />
         </Width90Centered>
       </DesktopOnly>
+      <Lightbox
+        //@ts-ignore
+        slides={photos}
+        //@ts-ignore
+        open={index >= 0}
+        //@ts-ignore
+        index={index}
+        //@ts-ignore
+        close={() => setIndex(-1)}
+      />
     </>
   );
 }
