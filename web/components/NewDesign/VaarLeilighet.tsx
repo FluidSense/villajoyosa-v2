@@ -47,7 +47,9 @@ export default function VaarLeilighet({ image }: Props) {
     image?.image?.imageUrl || "https://picsum.photos/id/225/1920/170";
   return (
     <section>
-      <VaarLeilighetHeader>Vår leilighet</VaarLeilighetHeader>
+      <VaarLeilighetHeader id="vaar-leilighet">
+        Vår leilighet
+      </VaarLeilighetHeader>
       <InnholdsText>
         Vi leigar ut ei penthouse-leilighet i 14. etasje med utsikt over
         Middelhavet og byen Villajoyosa. Med glassfasade ut mot den luftige

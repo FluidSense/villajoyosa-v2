@@ -45,7 +45,6 @@ const LeilighetInfoWrapper = styled.div`
 
 const Home: FC<Props> = (props) => {
   const { amenities, carouselImages, imagesAtStaticPositions } = props;
-  console.log("Images: ", imagesAtStaticPositions);
   return (
     <>
       <Head>

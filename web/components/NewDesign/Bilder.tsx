@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PhotoAlbum from "react-photo-album";
-import { SanityImage } from "types/sanityTypes";
 import { Lightbox } from "yet-another-react-lightbox";
 import { VaarLeilighetHeader } from "./VaarLeilighet";
 

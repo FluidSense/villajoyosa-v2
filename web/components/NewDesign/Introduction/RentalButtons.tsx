@@ -37,9 +37,11 @@ const SecondaryButton = styled(ButtonStyle)`
 
 const ReadMoreBelow = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  & > a:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   @media screen and (min-width: 769px) {
     display: none;
   }
@@ -85,8 +87,10 @@ export default function RentalButtons() {
         Lei fra et lokalt utleiebyrå <IoArrowForward />
       </SecondaryButton>
       <ReadMoreBelow>
-        <p style={scrollBaitTextStyle}>Eller les mer om leiligheten her</p>
-        <IoChevronDown />
+        <a href="#vaar-leilighet" style={scrollBaitTextStyle}>
+          Eller les mer om leiligheten her
+          <IoChevronDown />
+        </a>
       </ReadMoreBelow>
     </ActionButtonSection>
   );
