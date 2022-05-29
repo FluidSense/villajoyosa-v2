@@ -12,6 +12,7 @@ import textBlock from "./objects/textBlock";
 import content from "./content";
 import gallery from "./gallery";
 import { createPageSelectorWithSubset, Pages } from "./objects/pageSelector";
+import staticImage from "./staticImage";
 
 const textPageSelector = createPageSelectorWithSubset("textPageSelector", [
   Pages.Frontpage,
@@ -41,5 +42,6 @@ export default createSchema({
     imagePageSelector,
     content,
     gallery,
+    staticImage,
   ]),
 });
