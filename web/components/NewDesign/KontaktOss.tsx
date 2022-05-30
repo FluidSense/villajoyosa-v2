@@ -70,7 +70,7 @@ export default function KontaktOss() {
         <br /> Har du andre spørsmål eller har leid fra oss før, ta kontakt med
         oss her!
       </Beskrivelse>
-      <Form data-netlify>
+      <Form name="Kontaktskjema" method="POST" data-netlify>
         <label htmlFor="email">E-post</label>
         <input type="email" id="email" name="email" required />
         <label htmlFor="name">Navn</label>

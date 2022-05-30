@@ -85,6 +85,7 @@ const KontaktOssLink = styled.a`
   text-decoration: underline;
   margin-bottom: 13px;
   @media screen and (min-width: 769px) {
+    font-size: initial;
   }
 `;
 
