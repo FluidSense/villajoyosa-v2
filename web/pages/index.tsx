@@ -60,6 +60,7 @@ const Home: FC<Props> = (props) => {
             Med utsikt til havet er leiligheten en skjult perle langs Costa Blanca.
           "
         />
+        <title>Leilighet i Villajoyosa</title>
       </Head>
       <main>
         <Page>
