@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
-import { FullwidthImage } from "components/NewDesign/common";
+import {
+  DesktopOnly,
+  FullwidthImage,
+  MobileOnly,
+} from "components/NewDesign/common";
 import { ImageAtStaticPosition } from "types/local";
 import IntroductionText from "./IntroductionText";
 import RentalButtons from "./RentalButtons";
@@ -61,12 +65,17 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
       <FirstViewWrapper>
         <IngressWrapper>
           <IntroductionText />
+          <DesktopOnly>
+            <RentalButtons />
+          </DesktopOnly>
         </IngressWrapper>
         <section>
           <ActionButtonBackgroundImage src={actionButtonImageUrl} />
         </section>
       </FirstViewWrapper>
-      <RentalButtons />
+      <MobileOnly>
+        <RentalButtons />
+      </MobileOnly>
     </>
   );
 }

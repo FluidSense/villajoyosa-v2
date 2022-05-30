@@ -16,6 +16,7 @@ import VaarLeilighet from "components/NewDesign/VaarLeilighet";
 import LeilighetenHar from "components/NewDesign/LeilighetenHar";
 import Bilder from "components/NewDesign/Bilder";
 import { Page } from "components/NewDesign/common";
+import KontaktOss from "components/NewDesign/KontaktOss";
 
 type Props = {
   amenities: Amenity[];
@@ -84,6 +85,9 @@ const Home: FC<Props> = (props) => {
         </Page>
         <Page>
           <Bilder images={carouselImages} />
+        </Page>
+        <Page>
+          <KontaktOss />
         </Page>
       </main>
     </>

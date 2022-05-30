@@ -3,23 +3,7 @@ import { useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import { urlFor } from "urlBuilder";
 import { Lightbox } from "yet-another-react-lightbox";
-import { VaarLeilighetHeader } from "./VaarLeilighet";
-
-const BildeHeader = styled(VaarLeilighetHeader)``;
-
-const MobileOnly = styled.div`
-  display: initial;
-  @media screen and (min-width: 769px) {
-    display: none;
-  }
-`;
-
-const DesktopOnly = styled.div`
-  display: none;
-  @media screen and (min-width: 769px) {
-    display: initial;
-  }
-`;
+import { DesktopOnly, Header, MobileOnly } from "./common";
 
 const Center = styled.div`
   display: block;
@@ -29,6 +13,14 @@ const Center = styled.div`
 const Width90Centered = styled(Center)`
   width: 90%;
   margin-bottom: 300px;
+`;
+
+const BildeHeader = styled(Header)`
+  @media screen and (min-width: 769px) {
+    margin-top: 47px;
+    margin-bottom: 33px;
+    margin-left: 193px;
+  }
 `;
 
 type Props = {

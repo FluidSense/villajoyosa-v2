@@ -17,3 +17,17 @@ export const Page = styled.section`
     min-height: 90vh;
   }
 `;
+
+export const MobileOnly = styled.div`
+  display: initial;
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+`;
+
+export const DesktopOnly = styled.div`
+  display: none;
+  @media screen and (min-width: 769px) {
+    display: initial;
+  }
+`;
