@@ -61,6 +61,12 @@ const Header = styled(BaseHeader)`
     margin-left: 193px;
   }
 `;
+
+const HoneypotField = styled.p`
+  visibility: hidden;
+  position: absolute;
+`;
+
 export default function KontaktOss() {
   return (
     <section>
@@ -70,7 +76,17 @@ export default function KontaktOss() {
         <br /> Har du andre spørsmål eller har leid fra oss før, ta kontakt med
         oss her!
       </Beskrivelse>
-      <Form name="Kontaktskjema" method="POST" data-netlify>
+      <Form
+        name="Kontaktskjema"
+        method="POST"
+        data-netlify
+        data-netlify-honeypot="bot-field"
+      >
+        <HoneypotField>
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </HoneypotField>
         <label htmlFor="email">E-post</label>
         <input type="email" id="email" name="email" required />
         <label htmlFor="name">Navn</label>
