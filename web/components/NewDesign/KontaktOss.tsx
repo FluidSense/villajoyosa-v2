@@ -93,6 +93,7 @@ export default function KontaktOss() {
         <input type="text" id="name" name="navn" required />
         <label htmlFor="message">Melding</label>
         <TextArea id="message" name="melding"></TextArea>
+        <input type="hidden" name="form-name" value="Kontaktskjema"></input>
         <SendButton as="button" type="submit">
           Send
         </SendButton>
