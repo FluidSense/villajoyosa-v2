@@ -87,6 +87,11 @@ export default function KontaktOss() {
             Don’t fill this out if you’re human: <input name="bot-field" />
           </label>
         </HoneypotField>
+        <input
+          type="hidden"
+          name="subject"
+          value="Kontaktforespørsel fra villajoyosa.kvamme.it"
+        />
         <label htmlFor="email">E-post</label>
         <input type="email" id="email" name="email" required />
         <label htmlFor="name">Navn</label>
