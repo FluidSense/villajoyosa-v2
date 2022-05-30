@@ -61,6 +61,10 @@ const Home: FC<Props> = (props) => {
           "
         />
         <title>Leilighet i Villajoyosa</title>
+        <meta
+          name="favicon-source"
+          content="Holiday icon by Icons8 https://icons8.com/icons/set/favicon-beach"
+        />
       </Head>
       <main>
         <Page>
