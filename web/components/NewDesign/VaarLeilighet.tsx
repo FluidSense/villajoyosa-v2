@@ -59,7 +59,7 @@ export default function VaarLeilighet({ image }: Props) {
         Playa Centro. Der kan ein leiga solseng og parasoll heile dagen, til kl
         19 om kvelden.
       </InnholdsText>
-      <VaarLeilighetImage src={imageUrl} />
+      <VaarLeilighetImage alt={image.image.name} src={imageUrl} />
     </section>
   );
 }
