@@ -33,6 +33,7 @@ const FirstViewWrapper = styled.div`
 
 const BannerImage = styled(FullwidthImage)`
   max-height: 20vh;
+  width: 100vw;
   @media screen and (min-width: 769px) {
     max-height: 238px;
   }
@@ -61,7 +62,10 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
     actionImage?.image?.imageUrl || "https://picsum.photos/id/163/1920/740";
   return (
     <>
-      <BannerImage src={bannerImageUrl}></BannerImage>
+      <BannerImage
+        alt={bannerImage.image.name}
+        src={bannerImageUrl}
+      ></BannerImage>
       <FirstViewWrapper>
         <IngressWrapper>
           <IntroductionText />
@@ -70,7 +74,10 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
           </DesktopOnly>
         </IngressWrapper>
         <section>
-          <ActionButtonBackgroundImage src={actionButtonImageUrl} />
+          <ActionButtonBackgroundImage
+            alt={actionImage.image.name}
+            src={actionButtonImageUrl}
+          />
         </section>
       </FirstViewWrapper>
       <MobileOnly>
