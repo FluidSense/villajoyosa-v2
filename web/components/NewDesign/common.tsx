@@ -13,21 +13,21 @@ export const FullwidthImage = styled.img`
 `;
 
 export const Page = styled.section`
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     min-height: 90vh;
   }
 `;
 
 export const MobileOnly = styled.div`
   display: initial;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     display: none;
   }
 `;
 
 export const DesktopOnly = styled.div`
   display: none;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     display: initial;
   }
 `;

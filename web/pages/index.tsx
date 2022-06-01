@@ -26,7 +26,7 @@ type Props = {
 
 const SeparatorLine = styled.div`
   display: none;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     display: block;
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -36,7 +36,7 @@ const SeparatorLine = styled.div`
 const LeilighetInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
     & > * {
       width: 50%;

@@ -4,7 +4,7 @@ const CircularImage = styled.img`
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     height: 70px;
     width: 70px;
   }
@@ -14,7 +14,7 @@ const AvatarWrapper = styled.section`
   & img:first-of-type {
     margin-right: -16px;
   }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin-top: 10px;
   }
 `;

@@ -12,7 +12,7 @@ const IngressWrapper = styled.section`
   margin: auto 8vw;
   font-size: 2.1rem;
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin: 0 0 0 5vw;
   }
 `;
@@ -22,7 +22,7 @@ const FirstViewWrapper = styled.div`
   flex-direction: column;
   width: 100%;
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
     margin-top: 138px;
     & > * {
@@ -34,14 +34,14 @@ const FirstViewWrapper = styled.div`
 const BannerImage = styled(FullwidthImage)`
   max-height: 20vh;
   width: 100vw;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     max-height: 238px;
   }
 `;
 
 const ActionButtonBackgroundImage = styled(FullwidthImage)`
   height: 190px;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     border-radius: 17px;
     width: 90%;
     max-width: 738px;

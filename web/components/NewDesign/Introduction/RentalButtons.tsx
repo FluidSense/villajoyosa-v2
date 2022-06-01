@@ -15,7 +15,7 @@ const ButtonStyle = styled.a`
   gap: 5px;
   min-width: 338px;
   transition: filter 0.1s ease-in-out;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     width: fit-content;
     height: min-content;
   }
@@ -27,7 +27,7 @@ const ButtonStyle = styled.a`
 export const MainButton = styled(ButtonStyle)`
   margin: 21px 0 0;
   background-color: #ff934f;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin: initial;
   }
 `;
@@ -36,7 +36,7 @@ const SecondaryButton = styled(ButtonStyle)`
   margin: 13px 0;
   background-color: #646881;
   color: white;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin: initial;
   }
 `;
@@ -48,7 +48,7 @@ const ReadMoreBelow = styled.div`
     flex-direction: column;
     align-items: center;
   }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     display: none;
   }
 `;
@@ -71,7 +71,7 @@ const ActionButtonSection = styled.section`
   align-items: center;
   flex-wrap: wrap;
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     position: initial;
     flex-direction: column;
     margin: initial;
@@ -83,13 +83,13 @@ const ActionButtonSection = styled.section`
 const KontaktOssLink = styled.a`
   text-decoration: underline;
   margin-bottom: 13px;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     font-size: initial;
   }
 `;
 
 const RentalLinkWrapper = styled.section`
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     display: flex;
     flex-direction: row;
     width: 100%;

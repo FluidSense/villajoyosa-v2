@@ -7,7 +7,7 @@ import { InnerSeparatorLine } from "./LeilighetenHar";
 
 export const VaarLeilighetHeader = styled(Header)`
   margin-top: 0;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin-top: 47px;
     margin-bottom: 33px;
     margin-left: 193px;
@@ -18,7 +18,7 @@ const InnholdsText = styled.p`
   margin-left: 34px;
   margin-bottom: 28px;
   margin-right: 24px;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin-left: 134px;
     width: 60%;
   }
@@ -27,7 +27,7 @@ const InnholdsText = styled.p`
 const VaarLeilighetImage = styled(FullwidthImage)`
   height: 170px;
   object-position: center;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     border-radius: 8px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: block;

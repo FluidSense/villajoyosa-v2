@@ -18,14 +18,14 @@ const LeilighetenHarStyle = styled.section`
   grid-template-columns: 1fr 1fr;
   justify-content: start;
   margin-left: 30px;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin-top: 48px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 `;
 
 const Shadowbox = styled.article`
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     width: 70%;
     border-radius: 17px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -36,19 +36,20 @@ const Shadowbox = styled.article`
 `;
 
 const Header = styled(BaseHeader)`
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
+    word-wrap: break-word;
     margin-top: 0;
   }
 `;
 
 const DesktopVerticalCenter = styled.section`
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     align-self: center;
   }
 `;
 
 export const InnerSeparatorLine = styled.div`
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }

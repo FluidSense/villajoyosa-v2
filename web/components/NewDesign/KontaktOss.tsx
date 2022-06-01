@@ -17,13 +17,13 @@ const Form = styled.form`
     padding: 5px;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 1024px) {
       width: 40%;
     }
   }
   & > input {
     width: 50%;
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 1024px) {
       width: 20%;
     }
   }
@@ -41,7 +41,7 @@ const Beskrivelse = styled.p`
 `;
 
 const SendButton = styled(MainButton)`
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin-top: 20px;
   }
 `;
@@ -49,13 +49,13 @@ const SendButton = styled(MainButton)`
 const TextArea = styled.textarea`
   height: 15vh;
   font-size: small;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     height: 20vh;
   }
 `;
 
 const Header = styled(BaseHeader)`
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin-top: 47px;
     margin-bottom: 33px;
     margin-left: 193px;

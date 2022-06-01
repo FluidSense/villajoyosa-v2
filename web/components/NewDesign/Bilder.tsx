@@ -18,7 +18,7 @@ const Width90Centered = styled(Center)`
 `;
 
 const BildeHeader = styled(Header)`
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin-top: 47px;
     margin-bottom: 33px;
     margin-left: 193px;

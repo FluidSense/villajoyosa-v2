@@ -60,7 +60,7 @@ const IntroHeader = styled.h1`
   margin-bottom: 0;
   line-height: 1;
   position: relative;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     margin-top: initial;
     width: 90%;
     font-size: 4rem;
@@ -99,7 +99,7 @@ const IntroSubText = styled.p`
   font-weight: bold;
   width: 237px;
 
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     font-size: 1.25rem;
     font-weight: normal;
     width: initial;
@@ -113,7 +113,7 @@ const SubTextWithAvatars = styled.section`
   display: flex;
   align-items: center;
   margin-top: 20px;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     align-items: flex-start;
     margin-top: 10px;
   }
