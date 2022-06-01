@@ -103,7 +103,7 @@ const IntroSubText = styled.p`
     font-size: 1.25rem;
     font-weight: normal;
     width: initial;
-    width: 65%;
+    width: 64%;
     margin-right: 2%;
     max-width: max-content;
     margin-top: 0;

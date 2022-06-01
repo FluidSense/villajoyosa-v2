@@ -20,6 +20,7 @@ const LeilighetenHarStyle = styled.section`
   margin-left: 30px;
   @media screen and (min-width: 769px) {
     margin-top: 48px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 `;
 

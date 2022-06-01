@@ -43,8 +43,10 @@ const ActionButtonBackgroundImage = styled(FullwidthImage)`
   height: 190px;
   @media screen and (min-width: 769px) {
     border-radius: 17px;
-    width: 738px;
+    width: 90%;
+    max-width: 738px;
     height: 347px;
+    max-height: 65%;
     margin: 40px auto 0;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }

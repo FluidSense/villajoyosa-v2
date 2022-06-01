@@ -96,6 +96,7 @@ const RentalLinkWrapper = styled.section`
     margin-bottom: 24px;
     flex-wrap: wrap;
     gap: 29px;
+    justify-content: center;
   }
 `;
 
