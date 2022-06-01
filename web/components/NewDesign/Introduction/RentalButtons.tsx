@@ -29,7 +29,6 @@ export const MainButton = styled(ButtonStyle)`
   background-color: #ff934f;
   @media screen and (min-width: 769px) {
     margin: initial;
-    margin-right: 29px;
   }
 `;
 
@@ -95,6 +94,8 @@ const RentalLinkWrapper = styled.section`
     flex-direction: row;
     width: 100%;
     margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 29px;
   }
 `;
 

@@ -103,7 +103,9 @@ const IntroSubText = styled.p`
     font-size: 1.25rem;
     font-weight: normal;
     width: initial;
-    margin-right: 36px;
+    width: 65%;
+    margin-right: 2%;
+    max-width: max-content;
     margin-top: 0;
   }
 `;
