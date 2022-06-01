@@ -4,6 +4,8 @@ import PhotoAlbum from "react-photo-album";
 import { urlFor } from "urlBuilder";
 import { Lightbox } from "yet-another-react-lightbox";
 import { DesktopOnly, Header, MobileOnly } from "./common";
+import Image from "next/image";
+import { PhotoProps } from "react-photo-album";
 
 const Center = styled.div`
   display: block;
@@ -35,6 +37,7 @@ export default function Bilder({ images }: Props) {
     height: img.dimensions.height,
     width: img.dimensions.width,
     src: img.url,
+    blurDataUrl: img.lqip,
     images: breakpoints.map((breakpoint) => {
       const height = Math.round(
         (img.dimensions.height / img.dimensions.width) * breakpoint
@@ -76,6 +79,7 @@ export default function Bilder({ images }: Props) {
             photos={imagesInPhotoAlbumFormat}
             targetRowHeight={200}
             onClick={(_event, _photo, index) => setIndex(index)}
+            renderPhoto={NextJsImage}
           />
         </Width90Centered>
       </DesktopOnly>
@@ -88,3 +92,44 @@ export default function Bilder({ images }: Props) {
     </>
   );
 }
+
+type Photo = {
+  blurDataUrl: string;
+  height: number;
+  width: number;
+  src: string;
+  images: any[];
+};
+
+type NextJsImageProps = PhotoProps<Photo> & {
+  wrapperProps?: React.HTMLAttributes<HTMLDivElement>;
+};
+
+const NextJsImage = ({ photo, imageProps, wrapperProps }: NextJsImageProps) => {
+  const { width, height, blurDataUrl } = photo;
+  const { src, alt, title, style, sizes, className, onClick } = imageProps;
+  const { style: wrapperStyle, ...restWrapperProps } = wrapperProps ?? {};
+  return (
+    <div
+      style={{
+        width: style.width,
+        padding: style.padding,
+        marginBottom: style.marginBottom,
+        ...wrapperStyle,
+      }}
+      {...restWrapperProps}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        title={title}
+        sizes={sizes}
+        blurDataURL={blurDataUrl}
+        width={width}
+        height={height}
+        className={className}
+        onClick={onClick}
+      />
+    </div>
+  );
+};

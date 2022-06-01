@@ -106,7 +106,7 @@ export async function getStaticProps(
   const amenities = await client.fetch(amenityQuery);
 
   const carouselImagesQuery =
-    '*[_type == "gallery" && name == "Beta"]{images[]{"url": asset->url, "dimensions": asset->metadata.dimensions}}.images[]';
+    '*[_type == "gallery" && name == "Beta"]{images[]{"url": asset->url, "dimensions": asset->metadata.dimensions, "lqip": asset->metadata.lqip}}.images[]';
   const carouselImages = await client.fetch(carouselImagesQuery);
 
   const imageAtStaticPositionsQuery =
