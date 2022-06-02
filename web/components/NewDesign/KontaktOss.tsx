@@ -41,6 +41,7 @@ const Beskrivelse = styled.p`
 `;
 
 const SendButton = styled(MainButton)`
+  margin-top: 20px;
   @media screen and (min-width: 1024px) {
     margin-top: 20px;
   }

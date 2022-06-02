@@ -13,10 +13,13 @@ const SellingPointText = styled.span`
   position: absolute;
   left: 0;
   color: #ff934f;
-  animation-fill-mode: forwards;
   display: inline-block;
-  animation-name: rotate-out-only;
-  ${animationDuration}
+  animation: none;
+  @media screen and (min-width: 1024px) {
+    animation-fill-mode: forwards;
+    animation-name: rotate-out-only;
+    ${animationDuration}
+  }
 
   @keyframes rotate-out-only {
     0%,
@@ -34,7 +37,6 @@ const SellingPointText = styled.span`
 const LongestTextPlaceholder = styled(SellingPointText)`
   position: initial;
   visibility: hidden;
-  animation: none;
 `;
 
 const AnimatedSellingPoint = styled(SellingPointText)`
@@ -42,9 +44,11 @@ const AnimatedSellingPoint = styled(SellingPointText)`
   position: absolute;
   opacity: 0;
   left: 0;
-  animation-name: rotate;
-  ${animationDuration}
-  ${rotateAnimationWithDelay}
+  @media screen and (min-width: 1024px) {
+    animation-name: rotate;
+    ${animationDuration}
+    ${rotateAnimationWithDelay}
+  }
 
   @keyframes rotate {
     0% {

@@ -6,19 +6,20 @@ const ButtonStyle = styled.a`
   text-align: center;
   border: none;
   border-radius: 7px;
-  padding: 10px 60px;
+  padding: 10px 0px;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   gap: 5px;
-  min-width: 338px;
+  min-width: 293px;
   transition: filter 0.1s ease-in-out;
   height: fit-content;
   @media screen and (min-width: 1024px) {
     width: fit-content;
     height: min-content;
+    padding: 10px 60px;
   }
   &:hover {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

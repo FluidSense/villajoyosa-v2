@@ -12,7 +12,7 @@ const CircularImage = styled.img`
 
 const AvatarWrapper = styled.section`
   & img:first-of-type {
-    margin-right: -16px;
+    margin-right: -15%;
   }
   @media screen and (min-width: 1024px) {
     margin-top: 10px;
