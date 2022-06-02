@@ -69,7 +69,6 @@ export default function VaarLeilighet({ image }: Props) {
         <RoundedBorderImage
           alt={image?.image?.name}
           src={imageUrl}
-          width={image?.image?.dimensions.width}
           layout="fill"
           objectFit="cover"
           objectPosition="center"

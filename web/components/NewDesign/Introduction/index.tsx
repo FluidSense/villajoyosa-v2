@@ -78,7 +78,6 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
         <Image
           alt={bannerImage.image.name}
           src={bannerImageUrl}
-          width={bannerImage?.image?.dimensions.width}
           layout="fill"
           objectFit="cover"
           loader={loader}
@@ -96,7 +95,6 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
             <RoundedBorderImage
               alt={actionImage.image.name}
               src={actionButtonImageUrl}
-              width={actionImage?.image?.dimensions.width}
               layout="fill"
               objectFit="cover"
               loader={loader}
