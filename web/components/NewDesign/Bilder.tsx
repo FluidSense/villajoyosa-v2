@@ -3,7 +3,7 @@ import { useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import { urlFor } from "urlBuilder";
 import { Lightbox } from "yet-another-react-lightbox";
-import { DesktopOnly, Header, MobileOnly } from "./common";
+import { DesktopOnly, Header, loader, MobileOnly } from "./common";
 import Image from "next/image";
 import { PhotoProps } from "react-photo-album";
 
@@ -130,6 +130,7 @@ const NextJsImage = ({ photo, imageProps, wrapperProps }: NextJsImageProps) => {
         height={height}
         className={className}
         onClick={onClick}
+        loader={loader}
       />
     </div>
   );

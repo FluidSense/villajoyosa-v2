@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import {
   DesktopOnly,
   FullwidthImageWrapper,
+  loader,
   MobileOnly,
 } from "components/NewDesign/common";
 import { ImageAtStaticPosition } from "types/local";
@@ -68,8 +69,7 @@ type Props = {
 
 export default function Introduction({ bannerImage, actionImage }: Props) {
   const bannerImageUrl =
-    urlFor(bannerImage?.image?.imageUrl).format("webp").url() ||
-    "https://picsum.photos/id/1057/1920/747";
+    bannerImage?.image?.imageUrl || "https://picsum.photos/id/1057/1920/747";
   const actionButtonImageUrl =
     actionImage?.image?.imageUrl || "https://picsum.photos/id/163/1920/740";
   return (
@@ -81,6 +81,7 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
           width={bannerImage?.image?.dimensions.width}
           layout="fill"
           objectFit="cover"
+          loader={loader}
         />
       </BannerImage>
       <FirstViewWrapper>
@@ -98,6 +99,7 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
               width={actionImage?.image?.dimensions.width}
               layout="fill"
               objectFit="cover"
+              loader={loader}
             />
           </ActionButtonBackgroundImage>
         </section>

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { urlFor } from "urlBuilder";
 
 export const Header = styled.h2`
   font-size: 3rem;
@@ -29,3 +30,7 @@ export const DesktopOnly = styled.div`
     display: initial;
   }
 `;
+
+export function loader({ src, width, quality }) {
+  return urlFor(src).width(width).quality(quality).format("webp").url();
+}

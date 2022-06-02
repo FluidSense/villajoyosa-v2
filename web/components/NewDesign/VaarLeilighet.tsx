@@ -2,7 +2,7 @@
 
 import styled from "@emotion/styled";
 import { ImageAtStaticPosition } from "types/local";
-import { FullwidthImageWrapper, Header } from "./common";
+import { FullwidthImageWrapper, Header, loader } from "./common";
 import Image from "next/image";
 
 export const VaarLeilighetHeader = styled(Header)`
@@ -73,6 +73,7 @@ export default function VaarLeilighet({ image }: Props) {
           layout="fill"
           objectFit="cover"
           objectPosition="center"
+          loader={loader}
         />
       </VaarLeilighetImage>
     </section>
