@@ -9,6 +9,8 @@ splitbee.init({
   apiUrl: "/_hive",
 });
 
+splitbee.track("branch", { view: process.env.BRANCH });
+
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
