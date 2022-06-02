@@ -11,6 +11,8 @@ splitbee.init({
   disableCookie: true,
 });
 
+splitbee.track("branch", { view: process.env.BRANCH });
+
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
