@@ -70,6 +70,7 @@ export default function Bilder({ images }: Props) {
           photos={imagesInPhotoAlbumFormat}
           columns={2}
           onClick={(_event, _photo, index) => setIndex(index)}
+          renderPhoto={NextJsImage}
         />
       </MobileOnly>
       <DesktopOnly>
