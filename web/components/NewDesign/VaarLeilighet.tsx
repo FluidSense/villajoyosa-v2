@@ -73,6 +73,7 @@ export default function VaarLeilighet({ image }: Props) {
           objectFit="cover"
           objectPosition="center"
           loader={loader}
+          blurDataURL={image?.image?.lqip}
         />
       </VaarLeilighetImage>
     </section>

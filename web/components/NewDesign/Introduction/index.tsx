@@ -76,11 +76,13 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
     <>
       <BannerImage>
         <Image
-          alt={bannerImage.image.name}
+          alt={bannerImage?.image?.name}
           src={bannerImageUrl}
           layout="fill"
           objectFit="cover"
           loader={loader}
+          blurDataURL={bannerImage?.image?.lqip}
+          priority
         />
       </BannerImage>
       <FirstViewWrapper>
@@ -93,11 +95,13 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
         <section>
           <ActionButtonBackgroundImage>
             <RoundedBorderImage
-              alt={actionImage.image.name}
+              alt={actionImage?.image?.name}
               src={actionButtonImageUrl}
               layout="fill"
               objectFit="cover"
               loader={loader}
+              blurDataURL={actionImage?.image?.lqip}
+              priority
             />
           </ActionButtonBackgroundImage>
         </section>
