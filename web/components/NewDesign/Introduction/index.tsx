@@ -5,6 +5,7 @@ import {
   MobileOnly,
 } from "components/NewDesign/common";
 import { ImageAtStaticPosition } from "types/local";
+import { urlFor } from "urlBuilder";
 import IntroductionText from "./IntroductionText";
 import RentalButtons from "./RentalButtons";
 
@@ -59,7 +60,8 @@ type Props = {
 
 export default function Introduction({ bannerImage, actionImage }: Props) {
   const bannerImageUrl =
-    bannerImage?.image?.imageUrl || "https://picsum.photos/id/1057/1920/747";
+    urlFor(bannerImage?.image?.imageUrl).format("webp").url() ||
+    "https://picsum.photos/id/1057/1920/747";
   const actionButtonImageUrl =
     actionImage?.image?.imageUrl || "https://picsum.photos/id/163/1920/740";
   return (
