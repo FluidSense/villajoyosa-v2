@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@fevernova90/next-sanity-image": "^0.0.4",
     "@sanity/block-content-to-react": "^3.0.0",
