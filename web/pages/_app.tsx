@@ -9,7 +9,7 @@ splitbee.init({
   apiUrl: "/_hive",
 });
 
-splitbee.track("branch", { view: process.env.BRANCH });
+splitbee.track("branch", { type: process.env.BRANCH || "main-backup" });
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
