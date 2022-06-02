@@ -11,7 +11,7 @@ splitbee.init({
   disableCookie: true,
 });
 
-splitbee.track("branch", { view: process.env.BRANCH });
+splitbee.track("branch", { type: process.env.BRANCH || "rebrand-backup" });
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
