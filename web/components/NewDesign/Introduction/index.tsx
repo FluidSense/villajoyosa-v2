@@ -79,7 +79,6 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
           alt={bannerImage.image.name}
           src={bannerImageUrl}
           width={bannerImage?.image?.dimensions.width}
-          height={bannerImage?.image?.dimensions.height}
           layout="fill"
           objectFit="cover"
         />
@@ -97,7 +96,6 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
               alt={actionImage.image.name}
               src={actionButtonImageUrl}
               width={actionImage?.image?.dimensions.width}
-              height={actionImage?.image?.dimensions.height}
               layout="fill"
               objectFit="cover"
             />

@@ -70,7 +70,6 @@ export default function VaarLeilighet({ image }: Props) {
           alt={image?.image?.name}
           src={imageUrl}
           width={image?.image?.dimensions.width}
-          height={image?.image?.dimensions.height}
           layout="fill"
           objectFit="cover"
           objectPosition="center"
