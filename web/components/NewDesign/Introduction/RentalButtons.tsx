@@ -76,6 +76,7 @@ const ActionButtonSection = styled.section`
     margin: initial;
     margin-top: 64px;
     margin-bottom: 181px;
+    width: fit-content;
   }
 `;
 

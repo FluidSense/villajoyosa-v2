@@ -3,7 +3,6 @@
 import styled from "@emotion/styled";
 import { ImageAtStaticPosition } from "types/local";
 import { FullwidthImageWrapper, Header } from "./common";
-import { InnerSeparatorLine } from "./LeilighetenHar";
 import Image from "next/image";
 
 export const VaarLeilighetHeader = styled(Header)`
@@ -32,7 +31,7 @@ const VaarLeilighetImage = styled(FullwidthImageWrapper)`
   @media screen and (min-width: 1024px) {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: block;
-    margin: auto;
+    margin-left: 134px;
     width: 70%;
     margin-top: 76px;
     height: 307px;
