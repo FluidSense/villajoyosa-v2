@@ -2,8 +2,9 @@
 
 import styled from "@emotion/styled";
 import { ImageAtStaticPosition } from "types/local";
-import { FullwidthImage, Header } from "./common";
+import { FullwidthImageWrapper, Header } from "./common";
 import { InnerSeparatorLine } from "./LeilighetenHar";
+import Image from "next/image";
 
 export const VaarLeilighetHeader = styled(Header)`
   margin-top: 0;
@@ -24,17 +25,23 @@ const InnholdsText = styled.p`
   }
 `;
 
-const VaarLeilighetImage = styled(FullwidthImage)`
+const VaarLeilighetImage = styled(FullwidthImageWrapper)`
   height: 170px;
   object-position: center;
+  position: relative;
   @media screen and (min-width: 1024px) {
-    border-radius: 8px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: block;
     margin: auto;
     width: 70%;
     margin-top: 76px;
     height: 307px;
+  }
+`;
+
+const RoundedBorderImage = styled(Image)`
+  @media screen and (min-width: 1024px) {
+    border-radius: 8px;
   }
 `;
 
@@ -59,7 +66,17 @@ export default function VaarLeilighet({ image }: Props) {
         Playa Centro. Der kan ein leiga solseng og parasoll heile dagen, til kl
         19 om kvelden.
       </InnholdsText>
-      <VaarLeilighetImage alt={image.image.name} src={imageUrl} />
+      <VaarLeilighetImage>
+        <RoundedBorderImage
+          alt={image?.image?.name}
+          src={imageUrl}
+          width={image?.image?.dimensions.width}
+          height={image?.image?.dimensions.height}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+        />
+      </VaarLeilighetImage>
     </section>
   );
 }

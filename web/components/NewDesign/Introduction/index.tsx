@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
 import {
   DesktopOnly,
-  FullwidthImage,
+  FullwidthImageWrapper,
   MobileOnly,
 } from "components/NewDesign/common";
 import { ImageAtStaticPosition } from "types/local";
 import { urlFor } from "urlBuilder";
 import IntroductionText from "./IntroductionText";
 import RentalButtons from "./RentalButtons";
+import Image from "next/image";
 
 const IngressWrapper = styled.section`
   margin: auto 8vw;
@@ -32,24 +33,31 @@ const FirstViewWrapper = styled.div`
   }
 `;
 
-const BannerImage = styled(FullwidthImage)`
-  max-height: 20vh;
+const BannerImage = styled(FullwidthImageWrapper)`
+  height: 20vh;
   width: 100vw;
+  position: relative;
   @media screen and (min-width: 1024px) {
-    max-height: 238px;
+    height: 238px;
   }
 `;
 
-const ActionButtonBackgroundImage = styled(FullwidthImage)`
+const ActionButtonBackgroundImage = styled(FullwidthImageWrapper)`
   height: 190px;
+  position: relative;
   @media screen and (min-width: 1024px) {
-    border-radius: 17px;
     width: 90%;
     max-width: 738px;
     height: 347px;
     max-height: 65%;
     margin: 40px auto 0;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+`;
+
+const RoundedBorderImage = styled(Image)`
+  @media screen and (min-width: 1024px) {
+    border-radius: 17px;
   }
 `;
 
@@ -66,10 +74,16 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
     actionImage?.image?.imageUrl || "https://picsum.photos/id/163/1920/740";
   return (
     <>
-      <BannerImage
-        alt={bannerImage.image.name}
-        src={bannerImageUrl}
-      ></BannerImage>
+      <BannerImage>
+        <Image
+          alt={bannerImage.image.name}
+          src={bannerImageUrl}
+          width={bannerImage?.image?.dimensions.width}
+          height={bannerImage?.image?.dimensions.height}
+          layout="fill"
+          objectFit="cover"
+        />
+      </BannerImage>
       <FirstViewWrapper>
         <IngressWrapper>
           <IntroductionText />
@@ -78,10 +92,16 @@ export default function Introduction({ bannerImage, actionImage }: Props) {
           </DesktopOnly>
         </IngressWrapper>
         <section>
-          <ActionButtonBackgroundImage
-            alt={actionImage.image.name}
-            src={actionButtonImageUrl}
-          />
+          <ActionButtonBackgroundImage>
+            <RoundedBorderImage
+              alt={actionImage.image.name}
+              src={actionButtonImageUrl}
+              width={actionImage?.image?.dimensions.width}
+              height={actionImage?.image?.dimensions.height}
+              layout="fill"
+              objectFit="cover"
+            />
+          </ActionButtonBackgroundImage>
         </section>
       </FirstViewWrapper>
       <MobileOnly>
