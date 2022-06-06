@@ -70,6 +70,9 @@ const Home: FC<Props> = (props) => {
           name="og:title"
           content="Lei vår toppleilighet i Villajoyosa, Spania"
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://villajoyosa.kvamme.land" />
+        <meta property="og:locale" content="nb_NO" />
       </Head>
       <main>
         <Page>
