@@ -53,10 +53,7 @@ const Home: FC<Props> = (props) => {
           key="seo-description"
           name="description"
           content="
-            Rental information for a private penthouse apartment in Villajoyosa (La Vila Joiosa), Alicante, Spain. 
-            With a view of the ocean, it is a hidden gem along Costa Blanca.
-
-            Utleieinformasjon for en privat toppleilighet i Villajoyosa (La Vila Joiosa), Alicante, Spania.
+            Nyt den neste ferien din fra vår toppleilighet i Villajoyosa, Spania. 
             Med utsikt til havet er leiligheten en skjult perle langs Costa Blanca.
           "
         />
@@ -64,6 +61,14 @@ const Home: FC<Props> = (props) => {
         <meta
           name="favicon-source"
           content="Holiday icon by Icons8 https://icons8.com/icons/set/favicon-beach"
+        />
+        <meta
+          name="og:image"
+          content="https://cdn.sanity.io/images/ws1g0t28/production/df357e967730721824bf9c6892e68aec8ece4022-921x480.webp?w=640&fm=webp"
+        />
+        <meta
+          name="og:title"
+          content="Lei vår toppleilighet i Villajoyosa, Spania"
         />
       </Head>
       <main>
