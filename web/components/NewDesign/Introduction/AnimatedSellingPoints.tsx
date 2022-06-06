@@ -72,6 +72,10 @@ const AnimatedSellingPoint = styled(SellingPointText)`
 const LastElement = styled(AnimatedSellingPoint)`
   animation-name: rotate-last;
   ${rotateAnimationWithDelay}
+  @media screen and (min-width: 769px) {
+    animation-name: rotate-last;
+    ${rotateAnimationWithDelay}
+  }
   @keyframes rotate-last {
     0% {
       opacity: 0;
