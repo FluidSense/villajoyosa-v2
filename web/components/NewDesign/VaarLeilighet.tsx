@@ -57,13 +57,13 @@ export default function VaarLeilighet({ image }: Props) {
         Vår leilighet
       </VaarLeilighetHeader>
       <InnholdsText>
-        Vi leigar ut ei penthouse-leilighet i 14. etasje med utsikt over
-        Middelhavet og byen Villajoyosa. Med glassfasade ut mot den luftige
-        takterrassen får du sol mesteparten av dagen. Leiligheta ligg på toppen
-        av bygården &quot;Torre Colon&quot;, som tyder Columbus-tårnet. Den ligg
-        sentralt i gata Calle Colon, med knappe 5 min å gå til hovedstranda,
-        Playa Centro. Der kan ein leiga solseng og parasoll heile dagen, til kl
-        19 om kvelden.
+        Vi leier ut en penthouse-leilighet i 14. etasje med utsikt over
+        Middelhavet og byen Villajoysa. Med glassfasade ut mot den luftige
+        takterrassen får du sol mesteparten av dagen. Leiligheten ligger på
+        toppen av bygården &quot;Torre Colon&quot;, som betyr Columbus-tårnet.
+        Den ligger sentralt i gaten Calle Colon, med knappe 5 minutter å gå til
+        stranda. Der kan man leie solseng og parasoll hele dagen, til kl. 19 om
+        kvelden.
       </InnholdsText>
       <VaarLeilighetImage>
         <RoundedBorderImage
