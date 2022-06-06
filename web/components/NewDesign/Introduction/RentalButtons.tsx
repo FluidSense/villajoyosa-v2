@@ -110,22 +110,20 @@ export default function RentalButtons() {
       <RentalLinkWrapper>
         <MainButton
           data-splitbee-event="External Link"
+          data-splitbee-event-destination="Direkte"
+          href="#kontakt-oss"
+        >
+          Kontakt oss direkte
+        </MainButton>
+        <SecondaryButton
           data-splitbee-event-destination="Airbnb"
+          data-splitbee-event="External Link"
           href="https://www.airbnb.no/rooms/52714065?guests=1&adults=1&s=67&unique_share_id=1182380a-eccb-4dfb-a39d-8e7313984ebe"
           target="_blank"
         >
           Se leiligheten på Airbnb <IoArrowForward />
-        </MainButton>
-        <SecondaryButton
-          data-splitbee-event-destination="Allonis"
-          data-splitbee-event="External Link"
-          href="https://allonishomes.com/property/559/penthouse/short-time-rental/spain/alicante-costa-blanca/villajoyosa/urban-centre/"
-          target="_blank"
-        >
-          Lei fra et lokalt utleiebyrå <IoArrowForward />
         </SecondaryButton>
       </RentalLinkWrapper>
-      <KontaktOssLink href="#kontakt-oss">Kontakt oss direkte</KontaktOssLink>
       <ReadMoreBelow>
         <a href="#vaar-leilighet" style={scrollBaitTextStyle}>
           Eller les mer om leiligheten her
